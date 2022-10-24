@@ -1,0 +1,164 @@
+.body-exit {
+  justify-content: center;
+  align-items: center;
+  background: #181820;
+
+  @include mw($tb) {
+    justify-content: flex-start;
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+}
+
+.main-exit {
+  width: 100%;
+}
+
+.exit {
+  width: 100%;
+}
+
+.form-exit {
+  // @include font("EuclidSquare");
+  padding-top: 48px;
+  padding-bottom: 48px;
+  padding-left: 40px;
+  padding-right: 40px;
+  background: #21212b;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 440px;
+  margin-left: auto;
+  margin-right: auto;
+
+  @include mw($ph) {
+    max-width: none;
+    padding: 40px 20px;
+  }
+
+  &__field {
+    width: 100%;
+  }
+
+  &__legend {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 23px;
+    color: $white;
+    margin-bottom: 48px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+
+  &__img-wrap {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background-color: #272732;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+
+    &::after {
+      position: absolute;
+      content: "";
+      width: 18px;
+      height: 12px;
+      background-image: url(/img/svg/login-arr.svg);
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  &__box {
+    & + div {
+      margin-top: 16px;
+    }
+  }
+
+  &__label {
+    display: block;
+
+    & span:not(.withdrawal__label) {
+      position: absolute;
+      clip: rect(0 0 0 0);
+      width: 1px;
+      height: 1px;
+      margin: -1px;
+    }
+  }
+
+  &__input {
+    width: 100%;
+    background: #272732;
+    border: 1px solid #292936;
+    border-radius: 2px;
+    padding: 21px 16px;
+    font-size: 14px;
+    line-height: 18px;
+    color: #90969e;
+
+    &::placeholder {
+      font-size: 14px;
+      line-height: 18px;
+      color: #90969e;
+    }
+  }
+
+  &__text {
+    font-size: 14px;
+    line-height: 18px;
+    margin-top: 24px;
+    text-align: center;
+    color: #90969e;
+  }
+
+  &__btn {
+    width: 100%;
+    color: $white;
+    font-size: 14px;
+    line-height: 18px;
+    padding-top: 21px;
+    padding-bottom: 21px;
+    background: linear-gradient(360deg, #ff6240 0%, #d50000 100%);
+    border-radius: 4px;
+    margin-top: 32px;
+    cursor: pointer;
+    transition: 0.3s;
+    text-align: center;
+
+    @include hocus() {
+      opacity: 0.6;
+    }
+  }
+
+  &__forget {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    color: #90969e;
+    margin-top: 24px;
+    transition: 0.3s;
+
+    @include hocus() {
+      opacity: 0.6;
+    }
+  }
+}
+
+.not-valid {
+  border-color: red;
+
+  &::placeholder {
+    color: red;
+  }
+}
+
+.header-exit {
+  margin-bottom: 50px;
+}

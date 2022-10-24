@@ -1,0 +1,18 @@
+.DS_Store
+.idea
+.vscode
+*.ai
+*.log
+# *.pdf
+*.psd
+*.sublime*
+*.exe
+*.rar
+*.zip
+node_modules/
+/*_dist/
+/build/
+npm-debug.*
+_src/css/*.map
+_src/*.html
+Thumbs.db

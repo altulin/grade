@@ -1,0 +1,18 @@
+doctype html
+html(lang="ru")
+	include ../modules/_head.pug
+		include ../modules/_style
+
+	body.page-body.body-exit
+
+		header.header-exit
+			a.header-exit__logo.logo(href="index.html")
+				figure.logo__img-wrap
+					//- +img-retina(`logo`, `png`, `логотип`, `eader-exit__img`, `145`, `46`)
+
+		main.main-exit
+			block content
+
+
+		footer.footer-exit
+		include ../modules/_scripts.pug
