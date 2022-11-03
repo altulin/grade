@@ -1,0 +1,45 @@
+section.team
+	.team__inner.container
+		h2.team__title.title Команда профессионалов с&nbsp;высокой компетенцией
+
+
+		ul.team__list.accordion-container
+			each val,i in unit
+				li.team__item.ac.team-item
+					.team-item__header.ac-header
+						button.team-item__btn.unit.ac-trigger(type="button")
+							.unit__inner
+								figure.unit__img-wrap
+									.unit__img-inner
+										+img-retina(`${val.img}`, `jpj`, `${val.name}`, `unit__img`, `109`, `109`)
+
+								.unit__box.unit-box
+									.unit-box__left
+										h3.unit__name= val.name
+										p.unit__career= val.career
+										p.unit__practice
+											each m in val.practice
+												span= m
+									.unit-box__right
+										p.unit__spec-header Специализация
+										ul.unit__spec
+											each n in val.skill
+												li.unit__skill= n
+
+								figure.unit__plus.plus
+									span.plus__inner
+										+svg('plus',32,32,'plus')
+
+						.team-item.diploma
+							.diploma__inner
+								h4.diploma__titile Дипломы и сертификаты
+								.diploma__swiper.swiper.swiper-container
+									ul.diploma__list.swiper-wrapper
+										each t in val.slide
+											li.diploma__item.swiper-slide
+
+												a.diploma__link.glightbox(href=`./img/${t}-large.png`  data-gallery=`unit${i+1}`)
+													img.diploma__img(src=`./img/${t}.png`, alt="диплом")
+
+									.swiper-pagination
+					.team-item__panel.ac-panel

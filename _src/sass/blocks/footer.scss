@@ -1,1 +1,66 @@
-//
+.main-footer {
+  @include padding-top(60px);
+  &__inner {
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+  }
+
+  &__copy {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  &__logo {
+    width: 53px;
+    height: 53px;
+    display: block;
+
+    & svg {
+      fill: #ff794c;
+    }
+  }
+
+  &__politic {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 120%;
+    letter-spacing: -0.04em;
+    color: #878b90;
+    transition: 0.3s;
+
+    @include hocus() {
+      opacity: 0.6;
+    }
+  }
+
+  &__bottom {
+    border-top: 1px solid #e3e4e5;
+  }
+
+  &__ofert {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 120%;
+    letter-spacing: -0.04em;
+    color: #878b90;
+  }
+}
+.container {
+}
+.footer-logo {
+  &__icon {
+  }
+}
+
+.footer-bottom {
+  &__inner {
+    @include padding-bottom(40px);
+    @include padding-top(40px);
+  }
+}

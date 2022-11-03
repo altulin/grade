@@ -2,6 +2,17 @@ extends ../templates/_main.pug
 include ../helpers/mixins.pug
 
 block content
+	include ../modules/preloader
+	include ../sections/promo
+	include ../sections/services
+	include ../sections/discount
+	include ../sections/process
+	include ../sections/team
+	include ../sections/law
+	include ../sections/reviews
+	include ../sections/faq
+	include ../sections/contacts
+	include ../sections/search
 
-
-	include ../modules/_modal
+	include ../modules/_modal_consultation
+	include ../modules/_modal_success

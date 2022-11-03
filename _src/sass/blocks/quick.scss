@@ -1,0 +1,185 @@
+.quick {
+  display: flex;
+  flex-wrap: wrap;
+
+  @include mw($dt) {
+    flex-direction: column;
+  }
+
+  &__block {
+    display: flex;
+    justify-content: center;
+    border: 1px solid #e6e6e6;
+    border-radius: 24px;
+    background-color: #ffffff;
+    padding-top: 35px;
+    padding-bottom: 35px;
+    padding-left: 10px;
+    padding-right: 10px;
+    flex-grow: 1;
+
+    @include mw($dt) {
+      width: 100%;
+    }
+
+    @include mw($tb) {
+      padding-left: 20px;
+      padding-right: 20px;
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+  }
+
+  &__block-inner {
+    display: flex;
+    flex-grow: 1;
+    max-width: 601px;
+    align-items: center;
+    justify-content: space-between;
+
+    @include mw($ph) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  &__img-wrap {
+    width: 120px;
+    height: 120px;
+    background-image: url("../../img/quick.jpg");
+    background-size: cover;
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0;
+    margin-right: 10px;
+
+    @include mw($dt) {
+      margin-right: 20px;
+    }
+
+    @include mw($ph) {
+      margin-right: 0;
+      margin-bottom: 16px;
+    }
+  }
+
+  &__text {
+    font-weight: 400;
+    @include font-size(26px);
+    font-size: 26px;
+    line-height: 1.23;
+    flex-grow: 1;
+    max-width: 441px;
+
+    @include mw($tb) {
+      font-size: 22px;
+    }
+
+    @include mw($ph) {
+      max-width: none;
+    }
+
+    & span {
+      color: #ff794c;
+    }
+  }
+
+  &__link {
+    width: 100%;
+    font-weight: 400;
+    @include font-size(26px);
+    line-height: 1.23;
+    color: #ff794c;
+    border: 1px solid #ff794c;
+    border-radius: 24px;
+    background-color: #ffffff;
+    text-align: center;
+    @include padding-top(83px);
+    @include padding-bottom(83px);
+    transition: 0.3s;
+
+    @include hocus() {
+      background-color: #ff794c;
+      color: $white;
+    }
+
+    @include mw($ph) {
+      @include padding-top(20px);
+      @include padding-bottom(20px);
+      // padding-top: 24px;
+      // padding-bottom: 24px;
+      // font-size: 16px;
+    }
+  }
+}
+.social {
+  display: flex;
+  align-items: center;
+  border: 1px solid #e6e6e6;
+  border-radius: 100px 100px 100px 24px;
+  padding-left: 40px;
+  padding-right: 40px;
+  background-color: #ffffff;
+  padding-top: 39px;
+  padding-bottom: 39px;
+
+  @include mw($dt) {
+    align-self: center;
+  }
+
+  @include mw($tb) {
+    border-radius: 24px 64px 24px 24px;
+    padding: 19px;
+    width: 100%;
+  }
+
+  &__item {
+    @include mw($tb) {
+      width: 25%;
+    }
+  }
+
+  &__inner {
+    @include mw($tb) {
+      width: 100%;
+      height: 0;
+      padding-top: 100%;
+      position: relative;
+    }
+  }
+
+  &__link {
+    display: block;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    @include mw($tb) {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+    }
+  }
+
+  &__link--tg {
+    background-image: url("../../img/svg/tg.svg");
+  }
+
+  &__link--whatsapp {
+    background-image: url("../../img/svg/whatsapp.svg");
+  }
+
+  &__link--viber {
+    background-image: url("../../img/svg/viber.svg");
+  }
+
+  &__link--phone {
+    background-image: url("../../img/svg/phone.svg");
+  }
+}

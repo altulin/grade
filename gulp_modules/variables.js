@@ -1,6 +1,6 @@
 import pluginsObject from "./plugins.js";
 
-const projectName = `finance`; // название проекта
+const projectName = `grade`; // название проекта
 const distFolder = `${projectName}_dist`; // Папка продакшн
 const distFolderZip = "*.zip";
 const srcFolder = `_src`; // Папка разработки
@@ -12,7 +12,7 @@ const assemblyBabel = false; // babel true or false
 const cssFileList = ["", "-doc"];
 
 const plugunsJsUsed = [
-  `jquery_js`,
+  // `jquery_js`,
   // `videojs__js`,
   // `slick_js`,
   // `locomotive_scroll`,
@@ -143,7 +143,10 @@ const paths = {
     jsFiles: `${srcFolder}/js/**/*.js`,
     cssFile: `style`,
     cssMinFile: `style.min.css`,
-    rasterImg: `${srcFolder}/_img/*.{png,jpg}`,
+    rasterImg: [
+      `${srcFolder}/_img/*.{png,jpg}`,
+      `${srcFolder}/_img/slide/*.{png,jpg}`,
+    ],
     vectorImg: `${srcFolder}/_img/svg/*.svg`,
     webpImg: `${srcFolder}/_img/webp/*.{png,jpg}`,
     pugFiles: `${srcFolder}/pug/pages/*.pug`,

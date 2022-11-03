@@ -1,0 +1,246 @@
+.modal {
+  &__close {
+  }
+}
+
+.basicLightbox {
+  flex-direction: column;
+
+  @include mw($empty) {
+    overflow: scroll;
+    justify-content: flex-start;
+  }
+}
+
+.basicLightbox__placeholder {
+  flex-grow: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal--consultation {
+}
+.consultation {
+  &__wrapper {
+    flex-grow: 1;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-image: url("../../img/modal-bg.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+
+  &__inner {
+    width: 100%;
+    @include padding-top(46px);
+    @include padding-bottom(46px);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+
+    @include mw($empty) {
+      flex-direction: column;
+      justify-content: flex-start;
+      padding-top: 100px;
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+
+    @include mw($tb) {
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+  }
+
+  &__info {
+  }
+
+  &__title {
+  }
+
+  &__form {
+  }
+
+  &__btn {
+    margin-top: 16px;
+    font-weight: 450;
+    font-size: 24px;
+    line-height: 133%;
+    letter-spacing: -0.02em;
+    color: #ffffff;
+    background-color: #ef7d00;
+    border-radius: 8px;
+    text-align: center;
+    @include padding-top(40px);
+    @include padding-bottom(40px);
+    width: 100%;
+    cursor: pointer;
+  }
+}
+.modal-close {
+  position: absolute;
+  right: 5px;
+  top: 30px;
+  background-color: transparent;
+  width: 32px;
+  height: 32px;
+  background-image: url("../../img/svg/modal-close.svg");
+  background-size: cover;
+  cursor: pointer;
+  transition: 0.3s;
+
+  @include hocus() {
+    opacity: 0.8;
+  }
+
+  &__icon {
+    stroke: #70778a;
+  }
+}
+.container {
+}
+.consultation-info {
+  width: 50%;
+  max-width: 545px;
+
+  @include mw($empty) {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+
+  &__title {
+    font-weight: 400;
+    @include font-size(64px);
+    line-height: 90%;
+    letter-spacing: -0.04em;
+    color: #ffffff;
+    @include margin-bottom(64px);
+  }
+
+  &__block {
+  }
+
+  &__sub-title {
+  }
+
+  &__list {
+  }
+
+  &__item {
+    font-weight: 400;
+    @include font-size(26px);
+    line-height: 123%;
+    letter-spacing: -0.02em;
+    color: #70778a;
+    display: flex;
+    position: relative;
+
+    &::before {
+      content: "";
+      margin-right: 8px;
+      display: block;
+      width: 16px;
+      height: 16px;
+      background-image: url("../../img/svg/hexagon.svg");
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    & + li {
+      @include margin-top(32px);
+    }
+  }
+}
+.consultation-subtitle {
+  display: flex;
+  align-items: center;
+  @include margin-bottom(46px);
+
+  &__img {
+    width: 77px;
+    height: 77px;
+    background-image: url("../../img/img.png");
+    background-position: center;
+    background-size: cover;
+  }
+
+  &__text {
+    font-weight: 400;
+    @include font-size(26px);
+    line-height: 123%;
+    letter-spacing: -0.02em;
+    color: #ffffff;
+    margin-left: 32px;
+    @include margin-bottom(32px);
+  }
+}
+
+.consultation-form {
+  flex-grow: 1;
+  max-width: 610px;
+  border-radius: 16px;
+  @include padding-top(48px);
+  @include padding-bottom(48px);
+  padding-left: 30px;
+  padding-right: 30px;
+  display: flex;
+  justify-content: center;
+  margin-left: 20px;
+  background-image: url("../../img/svg/form-bg.svg");
+  background-size: cover;
+  background-position: right top;
+
+  @include mw($empty) {
+    margin-left: 0;
+  }
+
+  &__inner {
+    flex-grow: 1;
+    max-width: 482px;
+  }
+
+  &__title {
+    font-weight: 400;
+    @include font-size(64px);
+    line-height: 90%;
+    letter-spacing: -0.04em;
+    color: #d2d4d5;
+    @include margin-bottom(48px);
+  }
+
+  &__label {
+    @include vh();
+  }
+
+  &__block {
+    width: 100%;
+
+    & + div {
+      margin-top: 8px;
+    }
+  }
+
+  &__input {
+    width: 100%;
+    background-color: #f9f9f9;
+    border: 1px solid #e6e6e6;
+    border-radius: 8px;
+    padding: 40px 32px;
+    font-size: 24px;
+    line-height: 132%;
+    letter-spacing: -0.02em;
+    color: #20262f;
+
+    &::placeholder {
+      font-size: 24px;
+      line-height: 132%;
+      letter-spacing: -0.02em;
+      color: #20262f;
+    }
+  }
+}

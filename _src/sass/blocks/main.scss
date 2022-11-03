@@ -1,0 +1,7 @@
+.page-main {
+  margin-top: 82px;
+
+  @include mw($tb) {
+    margin-top: 61px;
+  }
+}

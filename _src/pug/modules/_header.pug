@@ -1,5 +1,64 @@
+-const geo1 = {id:'krasnoyarsk',link:'+73912347778',tel:'8 3912 347778',mail:'krs.ocenka@mail.ru',addr:['г. Красноярск, переулок Афонтовский, д.7, офис 215','г. Красноярск, ул. Линейная, д. 89, офис Ц.2-05'],name:'Красноярск'};
+
+-const geo2 = {id:'irkutsk',link:'+73952435001',tel:'8 3952 435001',mail:'irk.ocenka@mail.ru',addr:['г.Иркутск, ул. Ширямова, д.22, офис 302'],name:'Иркутск'};
+
+-const geo3 = {id:'bratsk',link:'+79025432294',tel:'8 9025 432294',mail:'brt.ocenka@mail.ru',addr:['г. Братск, ул. Южная, д.33а, офис 08'],name:'Братск'};
+
+-const geo = [geo1,geo2,geo3];
+
+
+
+
+
 header.header#header
 	.header__inner.container.container--header
 
 		a.header__logo.logo(href="/index.html")
+			+img-retina(`logo`, `png`, `логотип`, `logo__img`, `128`, `52`)
+		nav.header__nav.nav
+			ul.nav__list
+
+				each val in [{text: 'Услуги',	link: 'services'}, {text: 'Процесс',	link: 'process'}, {text: 'Команда',	link: 'team'}, {text: 'Отзывы',	link: 'reviews'}, {text: 'Контакты',	link: 'contacts'}]
+					li.nav__item
+						a.nav__link(href=`#${val.link}`)= val.text
+
+
+		.header__icon-box.icon-box
+			.icon-box__link.geo(role="button")
+				span.icon-box__icon-wrap
+					+svg('geo', 13, 13, 'geo')
+				.geo__block
+					.icon-box__inner
+						span.icon-box__title Ваш город:
+					.geo__list-wrap
+						label.geo__label(for="#geo") Выбрать город
+						select#geo.geo__select(name="geo")
+
+		.header__icon-box.icon-box
+			//- each n in geo
+			a.icon-box__link.icon-box__link--consultation(href=`tel:${geo[0].link}`)
+				span.icon-box__icon-wrap
+					+svg('tel', 13, 13, 'tel')
+				.icon-box__inner
+					span.icon-box__title Консультация
+					span.icon-box__text= geo[0].tel
+
+
+		a.header__burger.header-btn(href="#")
+			span.header-btn__icon.header-btn__icon--open
+				+svg('burger',20,14,'burger')
+			span.header-btn__icon.header-btn__icon--close
+				+svg('close',16,16,'close')
+				span.header-btn__icon-text закрыть
+
+
+
+
+
+
+
+
+
+
+
 			//- +img-retina(`logo`, `png`, `логотип`, `logo__img`, `145`, `46`)

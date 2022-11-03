@@ -1,0 +1,24 @@
+section.contacts
+	.contacts__inner.container
+		h2.contacts__title.title Контакты
+
+		.contacts__content
+			.contacts__left.hookup
+				ul.hookup__list
+					li.hookup__item.city
+						label.city__label(for="#city") Выбрать город
+						select#city.city__select(name="city")
+
+
+				ul.hookup__data.data
+					li.data__item.data__item--addr
+						//- p.data__addr
+
+					li.data__item
+						a.data__link.data__link--mail(href=`#`)
+
+					li.data__item
+						a.data__link.data__link--tel(href=`#`)
+
+			.contacts__right.map
+				.map__inner#map

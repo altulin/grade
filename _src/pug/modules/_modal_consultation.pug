@@ -1,0 +1,29 @@
+section.modal.modal--consultation.consultation(hidden)
+	.consultation__wrapper
+
+		.consultation__inner.container
+			button.modal__close.modal-close.consultation__close(type="button" aria-label="закрыть окно")
+			.consultation__info.consultation-info
+				h2.consultation__title.consultation-info__title Заявка на&nbsp;консультацию со&nbsp;специалистом
+				.consultation-info__block
+					h3.consultation-info__sub-title.consultation-subtitle
+						figure.consultation-subtitle__img
+						span.consultation-subtitle__text На консультации вы получите:
+
+					ul.consultation-info__list
+						each item in consultation
+							li.consultation-info__item= item
+
+			.consultation__form.consultation-form
+				form.consultation-form__inner(action="#" method="post")
+					legend.consultation-form__title Оставьте контактные данные
+					.consultation-form__block
+						label.consultation-form__label(for="consultation-name") Введите ваше имя
+						input.consultation-form__input#consultation-name(type="text" name="name" placeholder="Введите ваше имя" required)
+
+					.consultation-form__block
+						label.consultation-form__label(for="consultation-tel") Введите ваш телефон
+						input.consultation-form__input#consultation-tel(type="text" name="tel" placeholder="Введите ваш телефон" required)
+
+
+					button.consultation__btn(type="submit") Получить консультацию

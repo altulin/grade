@@ -1,0 +1,18 @@
+section.faq
+	.faq__inner.container
+		h2.faq__title.title Частые вопросы, которые задают нам клиенты
+
+		ul.faq__list
+			each item in faq
+				li.faq__item.ac
+					.faq__header.ac-header
+						button.faq__btn.ac-trigger(type="button")
+							span= item.header
+
+							figure.faq__plus.plus
+									span.plus__inner
+										+svg('plus',32,32,'plus')
+
+					.faq__panel.ac-panel
+						each text in item.panel
+							p.faq__text.ac-text= text

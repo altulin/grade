@@ -1,0 +1,20 @@
+section.law
+	.law__inner
+		.law__top.container
+			h2.law__title.title У нас есть все необходимые сертификаты и лицензии на право выполнения работ
+			.law__navigation.navigation
+				.law-button-prev.navigation__btn.arr
+					+svg("arr",30,24,"arr")
+				.law-button-next.navigation__btn.arr
+					+svg("arr",30,24,"arr")
+
+		.law__bottom
+			.law__swiper.swiper.swiper-container
+				ul.law__list.swiper-wrapper
+					while n < 7
+						li.law__item.swiper-slide
+							a.law__link.glightbox(href=`./img/law.jpg`  data-gallery=`law`)
+								img.law__img(src=`./img/law.jpg`, alt="лицензия" width='202' height='286')
+						-n++
+
+					-n=0

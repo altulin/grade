@@ -12,15 +12,16 @@ html {
 }
 
 body {
-  // @include font("Manrope");
+  @include font("SuisseIntl");
 
   display: flex;
   flex-direction: column;
   width: 100%;
   min-height: 100vh;
-  line-height: 1.2;
+  line-height: 1;
+  font-weight: 400;
   background-color: $bg;
-  color: $white;
+  color: $text;
 }
 
 a {
@@ -88,8 +89,8 @@ button {
 
   @include mw($tb) {
     // max-width: $width-tablet + $gap-tablet * 2;
-    // padding-right: $gap-tablet;
-    // padding-left: $gap-tablet;
+    padding-right: $gap-tablet;
+    padding-left: $gap-tablet;
   }
 
   @include mw($ph) {
@@ -99,6 +100,6 @@ button {
   }
 }
 
-// * {
-// outline: 1px solid #ff6347;
-// }
+* {
+  // outline: 1px solid #ff6347;
+}

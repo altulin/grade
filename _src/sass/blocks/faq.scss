@@ -1,0 +1,107 @@
+.faq {
+  @include margin-top(180px);
+  @include margin-bottom(180px);
+  &__inner {
+  }
+
+  &__title {
+    @include margin-bottom(80px);
+    color: rgba(#20262f, 0.2);
+    max-width: 746px;
+  }
+
+  &__list {
+  }
+
+  &__item {
+    background: #ffffff;
+    border: 1px solid #dcdcdc;
+    border-radius: 8px 100px 100px 8px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    transition: border-radius 0.8s;
+
+    &.is-active {
+      border-radius: 8px;
+      padding-bottom: 24px;
+    }
+  }
+
+  &__header {
+  }
+
+  &__btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background-color: transparent;
+    padding-top: 24px;
+    padding-bottom: 24px;
+    padding-right: 24px;
+    @include padding-left(40px);
+    cursor: pointer;
+
+    @include hocus() {
+      & .plus__icon {
+        stroke: #ef7d00;
+      }
+    }
+
+    &[aria-expanded="true"] .faq__plus {
+      opacity: 0;
+    }
+
+    span {
+      @include font-size(32px);
+      line-height: 100%;
+      letter-spacing: -0.02em;
+      color: #20262f;
+      flex-grow: 1;
+      max-width: 445px;
+      text-align: left;
+      margin-right: 20px;
+    }
+  }
+
+  &__plus {
+    transition: opacity 0.3s;
+  }
+
+  &__panel {
+    @include padding-left(30px);
+    max-width: 80%;
+  }
+
+  &__text {
+  }
+}
+.container {
+}
+.title {
+}
+.ac {
+}
+.ac-header {
+}
+.ac-trigger {
+}
+.plus {
+  &__inner {
+  }
+
+  &__icon {
+  }
+}
+.ac-panel {
+}
+.ac-text {
+}
+
+.ac .ac-panel .faq__text {
+  @include font-size(26px);
+  line-height: 100%;
+  letter-spacing: -0.02em;
+  color: #20262f;
+}

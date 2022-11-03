@@ -1,3 +1,84 @@
+@font-face {
+  src: url("/fonts/ProximaNova-Regular.woff2") format("woff2");
+  src: url("/fonts/ProximaNova-Regular.woff") format("woff");
+  font-family: ProximaNova;
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  src: url("/fonts/ProximaNova-Semibold.woff2") format("woff2");
+  src: url("/fonts/ProximaNova-Semibold.woff") format("woff");
+  font-family: ProximaNova;
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  src: url("/fonts/Raleway-Light.woff2") format("woff2");
+  src: url("/fonts/Raleway-Light.woff") format("woff");
+  font-family: Raleway;
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  src: url("/fonts/Raleway-Regular.woff2") format("woff2");
+  src: url("/fonts/Raleway-Regular.woff") format("woff");
+  font-family: Raleway;
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  src: url("/fonts/Raleway-Semibold.woff2") format("woff2");
+  src: url("/fonts/Raleway-Semibold.woff") format("woff");
+  font-family: Raleway;
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  src: url("/fonts/Stolzl-Book.woff2") format("woff2");
+  src: url("/fonts/Stolzl-Book.woff") format("woff");
+  font-family: Stolzl;
+  font-weight: 350;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  src: url("/fonts/Stolzl-Medium.woff2") format("woff2");
+  src: url("/fonts/Stolzl-Medium.woff") format("woff");
+  font-family: Stolzl;
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  src: url("/fonts/SuisseIntl-Book.woff2") format("woff2");
+  src: url("/fonts/SuisseIntl-Book.woff") format("woff");
+  font-family: SuisseIntl;
+  font-weight: 350;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  src: url("/fonts/SuisseIntl-Regular.woff2") format("woff2");
+  src: url("/fonts/SuisseIntl-Regular.woff") format("woff");
+  font-family: SuisseIntl;
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 *,
 *::before,
 *::after {
@@ -12,6 +93,7 @@ html {
 }
 
 body {
+  font-family: "SuisseIntl", "Arial", sans-serif;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -21,9 +103,10 @@ body {
           flex-direction: column;
   width: 100%;
   min-height: 100vh;
-  line-height: 1.2;
+  line-height: 1;
+  font-weight: 400;
   background-color: #ffffff;
-  color: #ffffff;
+  color: #20262f;
 }
 
 a {
@@ -85,7 +168,7 @@ button {
   margin-left: auto;
   padding-right: 15px;
   padding-left: 15px;
-  max-width: 1350px;
+  max-width: 1282px;
 }
 
 .doc {
@@ -149,5 +232,12 @@ button {
 
 .doc hr + p {
   color: #90969e;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
 }
 /*# sourceMappingURL=style-doc.css.map */

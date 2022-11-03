@@ -1,9 +1,16 @@
 footer.main-footer
-	.main-footer__inner.container
-		.main-footer__top
-			//- a.main-footer__logo(href="/index.html")
-				+img-retina(`logo`, `png`, `логотип`, `main-footer__logo-img`, `200`, `63`)
+	.main-footer__inner
+		.main-footer__top.container
+			p.main-footer__copy
+				span 2022 © ООО "Экспертный Центр "Оценщики"
+				span ИНН 3849067890 КПП 384901001
 
-			//- a.main-footer__up-link(href="#" aria-label="В начало")
+			a.main-footer__logo(href="/")
+				+svg('footer-logo',53,53,'footer-logo')
 
-		.main-footer__bottom
+			a.main-footer__politic(href="#") Политика конфиденциальности
+
+
+		.main-footer__bottom.footer-bottom
+			.footer-bottom__inner.container
+				p.main-footer__ofert Информация на сайте не является публичной офертой, определяемая Статьей 437(2) Гражданского кодекса РФ.

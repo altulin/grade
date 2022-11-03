@@ -4,7 +4,27 @@
 @import "./helpers/_mixins";
 @import "./helpers/_font";
 @import "./helpers/_global";
+@import "../../node_modules/hc-offcanvas-nav/src/scss/core";
+@import "../../node_modules/swiper/swiper-bundle.min";
+@import "../../node_modules/glightbox/dist/css/glightbox.min";
+@import "../../node_modules/basiclightbox/dist/basicLightbox.min";
+@import "../../node_modules/custom-select/src/css/custom-select";
 
-// Critical style
-// @import "./blocks/header";
-@import "./blocks/login";
+//
+
+@import "./blocks/header";
+@import "./blocks/main";
+@import "./blocks/promo";
+@import "./blocks/services";
+@import "./blocks/quick";
+@import "./blocks/discount";
+@import "./blocks/process";
+@import "./blocks/team";
+@import "./blocks/modal_consultation";
+@import "./blocks/modal_success";
+@import "./blocks/law";
+@import "./blocks/reviews";
+@import "./blocks/faq";
+@import "./blocks/contacts";
+@import "./blocks/footer";
+@import "./blocks/preloader";

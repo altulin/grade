@@ -1,0 +1,38 @@
+section.services
+		.services__inner.container
+			h2.services__title.title Экпертизы и&nbsp;оценка
+			.services__tabs.tabs
+				ul.tabs__list#tabs-list(data-tabs=true)
+					li.tabs__item
+						<a class="tabs__link tabs-link tabs-link--grade" data-tabby-default href="#grade">
+							<figure class="tabs-link__icon tabs-link__icon--grade"></figure>
+							<span class="tabs-link__text">Оценка</span>
+							<sup class="tabs-link__num">(8)</sup>
+						</a>
+					li.tabs__item
+						a.tabs__link.tabs-link.tabs-link--expertise(href="#expertise")
+							figure.tabs-link__icon.tabs-link__icon--expertise
+							span.tabs-link__text Экспертизы
+							sup.tabs-link__num (11)
+
+				.tabs__block
+					ul.tabs__content.grade#grade.skill
+						each val in skill
+							li.skill__item
+								a.skill__link
+									span.skill__text= `Оценка ${val.text}`
+									span.skill__price= val.price
+					ul.tabs__content.expertise#expertise.skill
+						each val in skill
+							li.skill__item
+								a.skill__link
+									span.skill__text= `Экспертиза ${val.text}`
+									span.skill__price= val.price
+		.services__tabs-info-inner.container
+			article.tabs__info.tabs-info
+				figure.tabs-info__img-wrap
+					+img-retina(`tabs-info`, `png`, `консультация`, `tabs-info__img`, `222`, `222`)
+				.tabs-info__content
+					h3.tabs-info__title Бесплатная юридическая консультация
+					p.tabs-info__text.tabs-info__text--dt Мы можем не только сделать оценку и экспертизу, но и проконсультировать вас, как ее применить и если понадобится - отстоять ваши интересы в суде
+				p.tabs-info__text.tabs-info__text--ph Мы можем не только сделать оценку и экспертизу, но и проконсультировать вас, как ее применить и если понадобится - отстоять ваши интересы в суде

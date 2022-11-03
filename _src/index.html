@@ -1,35 +1,1188 @@
 <!DOCTYPE html>
 <html lang="ru">
+<script>
+  window.data = {
+    	home: {"title":"гид&nbsp;по <br><span class=\"for-desktop\">бережному</span><span class=\"for-devices\">общению</span>","read":"Читать"},
+    };
+</script>
 
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width">
+  <meta name="description" content="Независимые экспертизы и оценка от 1 дня в Иркутске">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:title" content="Экпертизы и оценка">
+  <meta property="og:description" content="Независимые экспертизы и оценка от 1 дня в Иркутске">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Экпертизы и оценка">
+  <meta name="twitter:description" content="Независимые экспертизы и оценка от 1 дня в Иркутске">
+  <title>Экпертизы и оценка</title>
+  <link rel="apple-touch-icon" href=".fav/apple-touch-icon.png">
+  <link rel="icon" href="./fav/favicon.ico">
+  <link rel="icon" href="/fav/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" href="./fav/favicon-32x32.png" sizes="32x32">
+  <link rel="manifest" href="./fav/site.webmanifest">
   <link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body class="page-body">
   <header class="header" id="header">
     <div class="header__inner container container--header">
-      <a class="header__logo logo" href="/index.html"></a>
+      <a class="header__logo logo" href="/index.html">
+        <picture>
+          <source type="image/webp" srcset="/img/webp/logo.webp 1x, /img/webp/logo@2x.webp 2x" />
+          <img class="logo__img" src="/img/logo.png" srcset="/img/logo.png 1x, /img/logo@2x.png 2x" alt="логотип" width="128" height="52" />
+        </picture>
+      </a>
+      <nav class="header__nav nav">
+        <ul class="nav__list">
+          <li class="nav__item"><a class="nav__link" href="#services">Услуги</a>
+          </li>
+          <li class="nav__item"><a class="nav__link" href="#process">Процесс</a>
+          </li>
+          <li class="nav__item"><a class="nav__link" href="#team">Команда</a>
+          </li>
+          <li class="nav__item"><a class="nav__link" href="#reviews">Отзывы</a>
+          </li>
+          <li class="nav__item"><a class="nav__link" href="#contacts">Контакты</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="header__icon-box icon-box">
+        <div class="icon-box__link geo" role="button"><span class="icon-box__icon-wrap">
+              <svg class="geo__icon" viewBox="0 0 13 13" width="13" height="13">
+                <use xlink:href="/img/sprite.svg#geo"></use>
+              </svg></span>
+          <div class="geo__block">
+            <div class="icon-box__inner"><span class="icon-box__title">Ваш город:</span>
+            </div>
+            <div class="geo__list-wrap">
+              <label class="geo__label" for="#geo">Выбрать город</label>
+              <select class="geo__select" id="geo" name="geo"></select>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="header__icon-box icon-box"><a class="icon-box__link icon-box__link--consultation" href="tel:+73912347778"><span class="icon-box__icon-wrap">
+              <svg class="tel__icon" viewBox="0 0 13 13" width="13" height="13">
+                <use xlink:href="/img/sprite.svg#tel"></use>
+              </svg></span>
+            <div class="icon-box__inner"><span class="icon-box__title">Консультация</span><span class="icon-box__text">8 3912 347778</span></div></a>
+      </div><a class="header__burger header-btn" href="#"><span class="header-btn__icon header-btn__icon--open">
+            <svg class="burger__icon" viewBox="0 0 20 14" width="20" height="14">
+              <use xlink:href="/img/sprite.svg#burger"></use>
+            </svg></span><span class="header-btn__icon header-btn__icon--close">
+            <svg class="close__icon" viewBox="0 0 16 16" width="16" height="16">
+              <use xlink:href="/img/sprite.svg#close"></use>
+            </svg><span class="header-btn__icon-text">закрыть</span></span></a>
     </div>
   </header>
   <main class="page-main">
-    <section class="modal modal--registration" id="modal-registration">
-      <div class="modal__wrapper container">
-        <div class="modal__header">
-          <a class="modal__link-close" href="#" rel="modal:close" aria-label="закрыть"></a>
+    <section class="preloader">
+      <div class="preloader__lds lds-ring">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </section>
+    <section class="promo">
+      <div class="promo__top container">
+        <h1 class="promo__title">Независимые<br>
+            экспертизы и оценка
+            <br><span>от 1 дня в Иркутске</span>
+          </h1><a class="promo__link consultation-btn" href="#">Получить консультацию</a>
+      </div>
+      <div class="promo__inner">
+        <figure class="promo__img-wrap">
+          <picture>
+            <source media="(max-width: 1200px)" type="image/webp" srcset="/img/webp/promo-bg-1200.webp 1x, /img/webp/promo-bg-1200@2x.webp 2x" />
+            <source media="(max-width: 1200px)" type="image/jpeg" srcset="/img/promo-bg-1200.jpg 1x, /img/promo-bg-1200@2x.jpg 2x" />
+            <source media="(max-width: 600px)" type="image/webp" srcset="/img/webp/promo-bg-600.webp 1x, /img/webp/promo-bg-600@2x.webp 2x" />
+            <source media="(max-width: 600px)" type="image/jpeg" srcset="/img/promo-bg-600.jpg 1x, /img/promo-bg-600@2x.jpg 2x" />
+            <source type="image/webp" srcset="/img/webp/promo-bg.webp 1x, /img/webp/promo-bg@2x.webp 2x" />
+            <img class="promo__img" src="/img/promo-bg.jpg" srcset="/img/promo-bg.jpg 1x, /img/promo-bg@2x.jpg 2x" alt="Эксперты" width="1440" height="490" />
+          </picture>
+        </figure>
+      </div>
+    </section>
+    <section class="services">
+      <div class="services__inner container">
+        <h2 class="services__title title">Экпертизы и&nbsp;оценка</h2>
+        <div class="services__tabs tabs">
+          <ul class="tabs__list" id="tabs-list" data-tabs>
+            <li class="tabs__item">
+              <a class="tabs__link tabs-link tabs-link--grade" data-tabby-default href="#grade">
+                <figure class="tabs-link__icon tabs-link__icon--grade"></figure>
+                <span class="tabs-link__text">Оценка</span>
+                <sup class="tabs-link__num">(8)</sup>
+              </a>
+            </li>
+            <li class="tabs__item">
+              <a class="tabs__link tabs-link tabs-link--expertise" href="#expertise">
+                <figure class="tabs-link__icon tabs-link__icon--expertise"></figure><span class="tabs-link__text">Экспертизы</span><sup class="tabs-link__num">(11)</sup>
+              </a>
+            </li>
+          </ul>
+          <div class="tabs__block">
+            <ul class="tabs__content grade skill" id="grade">
+              <li class="skill__item"><a class="skill__link"><span class="skill__text">Оценка для нотариуса: отчет</span><span class="skill__price">1000</span></a>
+              </li>
+              <li class="skill__item"><a class="skill__link"><span class="skill__text">Оценка ущерба: ( пожар / залив )</span><span class="skill__price">7000</span></a>
+              </li>
+              <li class="skill__item"><a class="skill__link"><span class="skill__text">Оценка / отчет ( машины, квартиры, дом с земельным участком )</span><span class="skill__price">3000</span></a>
+              </li>
+              <li class="skill__item"><a class="skill__link"><span class="skill__text">Оценка / справка ( машины, квартиры, дом с земельным участком )</span><span class="skill__price">1500</span></a>
+              </li>
+              <li class="skill__item"><a class="skill__link"><span class="skill__text">Оценка движимого имущества</span><span class="skill__price">1000</span></a>
+              </li>
+              <li class="skill__item"><a class="skill__link"><span class="skill__text">Оценка недвижимого имущества</span><span class="skill__price">2000</span></a>
+              </li>
+              <li class="skill__item"><a class="skill__link"><span class="skill__text">Оценка бизнеса / акций</span><span class="skill__price">4000</span></a>
+              </li>
+              <li class="skill__item"><a class="skill__link"><span class="skill__text">Оценка оборудования</span><span class="skill__price">1000</span></a>
+              </li>
+            </ul>
+            <ul class="tabs__content expertise skill" id="expertise">
+              <li class="skill__item"><a class="skill__link"><span class="skill__text">Экспертиза для нотариуса: отчет</span><span class="skill__price">1000</span></a>
+              </li>
+              <li class="skill__item"><a class="skill__link"><span class="skill__text">Экспертиза ущерба: ( пожар / залив )</span><span class="skill__price">7000</span></a>
+              </li>
+              <li class="skill__item"><a class="skill__link"><span class="skill__text">Экспертиза / отчет ( машины, квартиры, дом с земельным участком )</span><span class="skill__price">3000</span></a>
+              </li>
+              <li class="skill__item"><a class="skill__link"><span class="skill__text">Экспертиза / справка ( машины, квартиры, дом с земельным участком )</span><span class="skill__price">1500</span></a>
+              </li>
+              <li class="skill__item"><a class="skill__link"><span class="skill__text">Экспертиза движимого имущества</span><span class="skill__price">1000</span></a>
+              </li>
+              <li class="skill__item"><a class="skill__link"><span class="skill__text">Экспертиза недвижимого имущества</span><span class="skill__price">2000</span></a>
+              </li>
+              <li class="skill__item"><a class="skill__link"><span class="skill__text">Экспертиза бизнеса / акций</span><span class="skill__price">4000</span></a>
+              </li>
+              <li class="skill__item"><a class="skill__link"><span class="skill__text">Экспертиза оборудования</span><span class="skill__price">1000</span></a>
+              </li>
+            </ul>
+          </div>
         </div>
-        <div class="modal__content"></div>
+      </div>
+      <div class="services__tabs-info-inner container">
+        <article class="tabs__info tabs-info">
+          <figure class="tabs-info__img-wrap">
+            <picture>
+              <source type="image/webp" srcset="/img/webp/tabs-info.webp 1x, /img/webp/tabs-info@2x.webp 2x" />
+              <img class="tabs-info__img" src="/img/tabs-info.png" srcset="/img/tabs-info.png 1x, /img/tabs-info@2x.png 2x" alt="консультация" width="222" height="222" />
+            </picture>
+          </figure>
+          <div class="tabs-info__content">
+            <h3 class="tabs-info__title">Бесплатная юридическая консультация</h3>
+            <p class="tabs-info__text tabs-info__text--dt">Мы можем не только сделать оценку и экспертизу, но и проконсультировать вас, как ее применить и если понадобится - отстоять ваши интересы в суде</p>
+          </div>
+          <p class="tabs-info__text tabs-info__text--ph">Мы можем не только сделать оценку и экспертизу, но и проконсультировать вас, как ее применить и если понадобится - отстоять ваши интересы в суде</p>
+        </article>
+      </div>
+    </section>
+    <section class="discount">
+      <div class="discount__inner container">
+        <h2 class="discount__title title">
+            Получите
+            <span>скидку&nbsp;10%</span><br>при&nbsp;обращении с&nbsp;сайта
+          </h2>
+        <div class="discount__quick-wrap">
+          <div class="quick">
+            <div class="quick__block">
+              <div class="quick__block-inner">
+                <figure class="quick__img-wrap"></figure>
+                <p class="quick__text">
+                  Задайте свой вопрос специалисту, прямо сейчас и
+                  <span>получите ответ в&nbsp;течение 1&nbsp;минуты</span>
+                  и скидку на&nbsp;наши услуги
+                </p>
+              </div>
+            </div>
+            <ul class="quick__social social">
+              <li class="social__item">
+                <div class="social__inner">
+                  <a class="social__link social__link--tg" href="https://telegram.me/YourUsernameHere" aria-label="мы в телеграмм" target="_blank"></a>
+                </div>
+              </li>
+              <li class="social__item">
+                <div class="social__inner">
+                  <a class="social__link social__link--whatsapp" href="https://wa.me/79131765996?text=Здравствуйте%2C+у+меня+есть+вопрос" aria-label="мы в вотсап" target="_blank"></a>
+                </div>
+              </li>
+              <li class="social__item">
+                <div class="social__inner">
+                  <a class="social__link social__link--viber" href="https://vibr.cc/79131765996" aria-label="мы в вайбер" target="_blank"></a>
+                </div>
+              </li>
+              <li class="social__item">
+                <div class="social__inner">
+                  <a class="social__link social__link--phone" href="tel:+78002007461" aria-label="наш телефон"></a>
+                </div>
+              </li>
+            </ul><a class="quick__link consultation-btn" href="#">Оставить заявку</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="process">
+      <div class="process__inner container">
+        <h2 class="process__title title">Процесс работы</h2>
+        <ul class="process__list">
+          <li class="process__item process-item process-item--familiarity">
+            <div class="process-item__inner">
+              <p class="process__num title">1</p>
+              <div class="process-item__block">
+                <h3 class="process-item__title">Знакомство</h3>
+                <p class="process-item__text">Оставьте заявку или позвоните в любой форме на сайте</p>
+              </div>
+            </div>
+          </li>
+          <li class="process__item process-item process-item--documents">
+            <div class="process-item__inner">
+              <p class="process__num title">2</p>
+              <div class="process-item__block">
+                <h3 class="process-item__title">Документы</h3>
+                <p class="process-item__text">Отправьте документы и фото объекта или мы приедем за ними сами</p>
+              </div>
+            </div>
+          </li>
+          <li class="process__item process-item process-item--result">
+            <div class="process-item__inner">
+              <p class="process__num title">3</p>
+              <div class="process-item__block">
+                <h3 class="process-item__title">Результат</h3>
+                <p class="process-item__text">Курьер бесплатно привезет вам оценку или заберите ее у нас в офисе</p>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section class="team">
+      <div class="team__inner container">
+        <h2 class="team__title title">Команда профессионалов с&nbsp;высокой компетенцией</h2>
+        <ul class="team__list accordion-container">
+          <li class="team__item ac team-item">
+            <div class="team-item__header ac-header">
+              <button class="team-item__btn unit ac-trigger" type="button">
+                <div class="unit__inner">
+                  <figure class="unit__img-wrap">
+                    <div class="unit__img-inner">
+                      <picture>
+                        <source type="image/webp" srcset="/img/webp/unit1.webp 1x, /img/webp/unit1@2x.webp 2x" />
+                        <img class="unit__img" src="/img/unit1.jpj" srcset="/img/unit1.jpj 1x, /img/unit1@2x.jpj 2x" alt="Евгений Сазонов" width="109" height="109" />
+                      </picture>
+                    </div>
+                  </figure>
+                  <div class="unit__box unit-box">
+                    <div class="unit-box__left">
+                      <h3 class="unit__name">Евгений Сазонов</h3>
+                      <p class="unit__career">генеральный директор</p>
+                      <p class="unit__practice"><span>Опыт работы с 2012 г.</span><span>Высшее образование по специальности: «Экономика».</span>
+                      </p>
+                    </div>
+                    <div class="unit-box__right">
+                      <p class="unit__spec-header">Специализация</p>
+                      <ul class="unit__spec">
+                        <li class="unit__skill">Эксперт-техник</li>
+                        <li class="unit__skill">Товаровед</li>
+                        <li class="unit__skill">Оценка имущества</li>
+                        <li class="unit__skill">Судебный эксперт</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <figure class="unit__plus plus"><span class="plus__inner">
+                        <svg class="plus__icon" viewBox="0 0 32 32" width="32" height="32">
+                          <use xlink:href="/img/sprite.svg#plus"></use>
+                        </svg></span>
+                  </figure>
+                </div>
+              </button>
+              <div class="team-item diploma">
+                <div class="diploma__inner">
+                  <h4 class="diploma__titile">Дипломы и сертификаты</h4>
+                  <div class="diploma__swiper swiper swiper-container">
+                    <ul class="diploma__list swiper-wrapper">
+                      <li class="diploma__item swiper-slide">
+                        <a class="diploma__link glightbox" href="./img/slide1-1-large.png" data-gallery="unit1">
+                          <img class="diploma__img" src="./img/slide1-1.png" alt="диплом">
+                        </a>
+                      </li>
+                      <li class="diploma__item swiper-slide">
+                        <a class="diploma__link glightbox" href="./img/slide1-2-large.png" data-gallery="unit1">
+                          <img class="diploma__img" src="./img/slide1-2.png" alt="диплом">
+                        </a>
+                      </li>
+                      <li class="diploma__item swiper-slide">
+                        <a class="diploma__link glightbox" href="./img/slide1-3-large.png" data-gallery="unit1">
+                          <img class="diploma__img" src="./img/slide1-3.png" alt="диплом">
+                        </a>
+                      </li>
+                      <li class="diploma__item swiper-slide">
+                        <a class="diploma__link glightbox" href="./img/slide1-4-large.png" data-gallery="unit1">
+                          <img class="diploma__img" src="./img/slide1-4.png" alt="диплом">
+                        </a>
+                      </li>
+                      <li class="diploma__item swiper-slide">
+                        <a class="diploma__link glightbox" href="./img/slide1-5-large.png" data-gallery="unit1">
+                          <img class="diploma__img" src="./img/slide1-5.png" alt="диплом">
+                        </a>
+                      </li>
+                    </ul>
+                    <div class="swiper-pagination"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="team-item__panel ac-panel"></div>
+          </li>
+          <li class="team__item ac team-item">
+            <div class="team-item__header ac-header">
+              <button class="team-item__btn unit ac-trigger" type="button">
+                <div class="unit__inner">
+                  <figure class="unit__img-wrap">
+                    <div class="unit__img-inner">
+                      <picture>
+                        <source type="image/webp" srcset="/img/webp/unit2.webp 1x, /img/webp/unit2@2x.webp 2x" />
+                        <img class="unit__img" src="/img/unit2.jpj" srcset="/img/unit2.jpj 1x, /img/unit2@2x.jpj 2x" alt="Юлия Сазонова" width="109" height="109" />
+                      </picture>
+                    </div>
+                  </figure>
+                  <div class="unit__box unit-box">
+                    <div class="unit-box__left">
+                      <h3 class="unit__name">Юлия Сазонова</h3>
+                      <p class="unit__career">заместитель генерального директора</p>
+                      <p class="unit__practice"><span>Высшее образование по специальности: »Менеджмент».</span><span>Магистр Юриспруденции.  Квалификация оценщик имущества,</span><span>оценка бизнеса, свидетельство о членстве в СРО</span>
+                      </p>
+                    </div>
+                    <div class="unit-box__right">
+                      <p class="unit__spec-header">Специализация</p>
+                      <ul class="unit__spec">
+                        <li class="unit__skill">Оценка имущества</li>
+                        <li class="unit__skill">Оценка ущерба</li>
+                        <li class="unit__skill">Оценка бизнеса</li>
+                        <li class="unit__skill">Судебный эксперт</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <figure class="unit__plus plus"><span class="plus__inner">
+                        <svg class="plus__icon" viewBox="0 0 32 32" width="32" height="32">
+                          <use xlink:href="/img/sprite.svg#plus"></use>
+                        </svg></span>
+                  </figure>
+                </div>
+              </button>
+              <div class="team-item diploma">
+                <div class="diploma__inner">
+                  <h4 class="diploma__titile">Дипломы и сертификаты</h4>
+                  <div class="diploma__swiper swiper swiper-container">
+                    <ul class="diploma__list swiper-wrapper">
+                      <li class="diploma__item swiper-slide">
+                        <a class="diploma__link glightbox" href="./img/slide2-1-large.png" data-gallery="unit2">
+                          <img class="diploma__img" src="./img/slide2-1.png" alt="диплом">
+                        </a>
+                      </li>
+                      <li class="diploma__item swiper-slide">
+                        <a class="diploma__link glightbox" href="./img/slide2-2-large.png" data-gallery="unit2">
+                          <img class="diploma__img" src="./img/slide2-2.png" alt="диплом">
+                        </a>
+                      </li>
+                      <li class="diploma__item swiper-slide">
+                        <a class="diploma__link glightbox" href="./img/slide2-3-large.png" data-gallery="unit2">
+                          <img class="diploma__img" src="./img/slide2-3.png" alt="диплом">
+                        </a>
+                      </li>
+                      <li class="diploma__item swiper-slide">
+                        <a class="diploma__link glightbox" href="./img/slide2-4-large.png" data-gallery="unit2">
+                          <img class="diploma__img" src="./img/slide2-4.png" alt="диплом">
+                        </a>
+                      </li>
+                    </ul>
+                    <div class="swiper-pagination"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="team-item__panel ac-panel"></div>
+          </li>
+          <li class="team__item ac team-item">
+            <div class="team-item__header ac-header">
+              <button class="team-item__btn unit ac-trigger" type="button">
+                <div class="unit__inner">
+                  <figure class="unit__img-wrap">
+                    <div class="unit__img-inner">
+                      <picture>
+                        <source type="image/webp" srcset="/img/webp/unit3.webp 1x, /img/webp/unit3@2x.webp 2x" />
+                        <img class="unit__img" src="/img/unit3.jpj" srcset="/img/unit3.jpj 1x, /img/unit3@2x.jpj 2x" alt="Сергей Константинов" width="109" height="109" />
+                      </picture>
+                    </div>
+                  </figure>
+                  <div class="unit__box unit-box">
+                    <div class="unit-box__left">
+                      <h3 class="unit__name">Сергей Константинов</h3>
+                      <p class="unit__career">эксперт-строитель</p>
+                      <p class="unit__practice"><span>Опыт работы с 1979 года.</span><span>Высшее образование по специальности:</span><span>«Экономика и организация строительства».</span>
+                      </p>
+                    </div>
+                    <div class="unit-box__right">
+                      <p class="unit__spec-header">Специализация</p>
+                      <ul class="unit__spec">
+                        <li class="unit__skill">Оценка имущества</li>
+                        <li class="unit__skill">Оценка ущерба</li>
+                        <li class="unit__skill">Оценка оборудования</li>
+                        <li class="unit__skill">Строительно-техническая экспертиза</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <figure class="unit__plus plus"><span class="plus__inner">
+                        <svg class="plus__icon" viewBox="0 0 32 32" width="32" height="32">
+                          <use xlink:href="/img/sprite.svg#plus"></use>
+                        </svg></span>
+                  </figure>
+                </div>
+              </button>
+              <div class="team-item diploma">
+                <div class="diploma__inner">
+                  <h4 class="diploma__titile">Дипломы и сертификаты</h4>
+                  <div class="diploma__swiper swiper swiper-container">
+                    <ul class="diploma__list swiper-wrapper">
+                      <li class="diploma__item swiper-slide">
+                        <a class="diploma__link glightbox" href="./img/slide3-1-large.png" data-gallery="unit3">
+                          <img class="diploma__img" src="./img/slide3-1.png" alt="диплом">
+                        </a>
+                      </li>
+                      <li class="diploma__item swiper-slide">
+                        <a class="diploma__link glightbox" href="./img/slide3-2-large.png" data-gallery="unit3">
+                          <img class="diploma__img" src="./img/slide3-2.png" alt="диплом">
+                        </a>
+                      </li>
+                      <li class="diploma__item swiper-slide">
+                        <a class="diploma__link glightbox" href="./img/slide3-3-large.png" data-gallery="unit3">
+                          <img class="diploma__img" src="./img/slide3-3.png" alt="диплом">
+                        </a>
+                      </li>
+                    </ul>
+                    <div class="swiper-pagination"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="team-item__panel ac-panel"></div>
+          </li>
+          <li class="team__item ac team-item">
+            <div class="team-item__header ac-header">
+              <button class="team-item__btn unit ac-trigger" type="button">
+                <div class="unit__inner">
+                  <figure class="unit__img-wrap">
+                    <div class="unit__img-inner">
+                      <picture>
+                        <source type="image/webp" srcset="/img/webp/unit1.webp 1x, /img/webp/unit1@2x.webp 2x" />
+                        <img class="unit__img" src="/img/unit1.jpj" srcset="/img/unit1.jpj 1x, /img/unit1@2x.jpj 2x" alt="Николай Давыдов" width="109" height="109" />
+                      </picture>
+                    </div>
+                  </figure>
+                  <div class="unit__box unit-box">
+                    <div class="unit-box__left">
+                      <h3 class="unit__name">Николай Давыдов</h3>
+                      <p class="unit__career">эксперт-строитель</p>
+                      <p class="unit__practice"><span>Опыт работы с 2012 г.</span><span>Высшее образование по специальности: «Экономика».</span>
+                      </p>
+                    </div>
+                    <div class="unit-box__right">
+                      <p class="unit__spec-header">Специализация</p>
+                      <ul class="unit__spec">
+                        <li class="unit__skill">Оценка имущества</li>
+                        <li class="unit__skill">Оценка ущерба</li>
+                        <li class="unit__skill">Оценка оборудования</li>
+                        <li class="unit__skill">Строительно-техническая экспертиза</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <figure class="unit__plus plus"><span class="plus__inner">
+                        <svg class="plus__icon" viewBox="0 0 32 32" width="32" height="32">
+                          <use xlink:href="/img/sprite.svg#plus"></use>
+                        </svg></span>
+                  </figure>
+                </div>
+              </button>
+              <div class="team-item diploma">
+                <div class="diploma__inner">
+                  <h4 class="diploma__titile">Дипломы и сертификаты</h4>
+                  <div class="diploma__swiper swiper swiper-container">
+                    <ul class="diploma__list swiper-wrapper">
+                      <li class="diploma__item swiper-slide">
+                        <a class="diploma__link glightbox" href="./img/slide1-1-large.png" data-gallery="unit4">
+                          <img class="diploma__img" src="./img/slide1-1.png" alt="диплом">
+                        </a>
+                      </li>
+                      <li class="diploma__item swiper-slide">
+                        <a class="diploma__link glightbox" href="./img/slide1-2-large.png" data-gallery="unit4">
+                          <img class="diploma__img" src="./img/slide1-2.png" alt="диплом">
+                        </a>
+                      </li>
+                      <li class="diploma__item swiper-slide">
+                        <a class="diploma__link glightbox" href="./img/slide1-3-large.png" data-gallery="unit4">
+                          <img class="diploma__img" src="./img/slide1-3.png" alt="диплом">
+                        </a>
+                      </li>
+                      <li class="diploma__item swiper-slide">
+                        <a class="diploma__link glightbox" href="./img/slide1-4-large.png" data-gallery="unit4">
+                          <img class="diploma__img" src="./img/slide1-4.png" alt="диплом">
+                        </a>
+                      </li>
+                      <li class="diploma__item swiper-slide">
+                        <a class="diploma__link glightbox" href="./img/slide1-5-large.png" data-gallery="unit4">
+                          <img class="diploma__img" src="./img/slide1-5.png" alt="диплом">
+                        </a>
+                      </li>
+                    </ul>
+                    <div class="swiper-pagination"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="team-item__panel ac-panel"></div>
+          </li>
+          <li class="team__item ac team-item">
+            <div class="team-item__header ac-header">
+              <button class="team-item__btn unit ac-trigger" type="button">
+                <div class="unit__inner">
+                  <figure class="unit__img-wrap">
+                    <div class="unit__img-inner">
+                      <picture>
+                        <source type="image/webp" srcset="/img/webp/unit1.webp 1x, /img/webp/unit1@2x.webp 2x" />
+                        <img class="unit__img" src="/img/unit1.jpj" srcset="/img/unit1.jpj 1x, /img/unit1@2x.jpj 2x" alt="Лидия Матвеева" width="109" height="109" />
+                      </picture>
+                    </div>
+                  </figure>
+                  <div class="unit__box unit-box">
+                    <div class="unit-box__left">
+                      <h3 class="unit__name">Лидия Матвеева</h3>
+                      <p class="unit__career">эксперт-строитель</p>
+                      <p class="unit__practice"><span>Опыт работы с 2012 г.</span><span>Высшее образование по специальности: «Экономика».</span>
+                      </p>
+                    </div>
+                    <div class="unit-box__right">
+                      <p class="unit__spec-header">Специализация</p>
+                      <ul class="unit__spec">
+                        <li class="unit__skill">Оценка имущества</li>
+                        <li class="unit__skill">Оценка ущерба</li>
+                        <li class="unit__skill">Оценка оборудования</li>
+                        <li class="unit__skill">Строительно-техническая экспертиза</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <figure class="unit__plus plus"><span class="plus__inner">
+                        <svg class="plus__icon" viewBox="0 0 32 32" width="32" height="32">
+                          <use xlink:href="/img/sprite.svg#plus"></use>
+                        </svg></span>
+                  </figure>
+                </div>
+              </button>
+              <div class="team-item diploma">
+                <div class="diploma__inner">
+                  <h4 class="diploma__titile">Дипломы и сертификаты</h4>
+                  <div class="diploma__swiper swiper swiper-container">
+                    <ul class="diploma__list swiper-wrapper">
+                      <li class="diploma__item swiper-slide">
+                        <a class="diploma__link glightbox" href="./img/slide1-1-large.png" data-gallery="unit5">
+                          <img class="diploma__img" src="./img/slide1-1.png" alt="диплом">
+                        </a>
+                      </li>
+                      <li class="diploma__item swiper-slide">
+                        <a class="diploma__link glightbox" href="./img/slide1-2-large.png" data-gallery="unit5">
+                          <img class="diploma__img" src="./img/slide1-2.png" alt="диплом">
+                        </a>
+                      </li>
+                      <li class="diploma__item swiper-slide">
+                        <a class="diploma__link glightbox" href="./img/slide1-3-large.png" data-gallery="unit5">
+                          <img class="diploma__img" src="./img/slide1-3.png" alt="диплом">
+                        </a>
+                      </li>
+                      <li class="diploma__item swiper-slide">
+                        <a class="diploma__link glightbox" href="./img/slide1-4-large.png" data-gallery="unit5">
+                          <img class="diploma__img" src="./img/slide1-4.png" alt="диплом">
+                        </a>
+                      </li>
+                      <li class="diploma__item swiper-slide">
+                        <a class="diploma__link glightbox" href="./img/slide1-5-large.png" data-gallery="unit5">
+                          <img class="diploma__img" src="./img/slide1-5.png" alt="диплом">
+                        </a>
+                      </li>
+                    </ul>
+                    <div class="swiper-pagination"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="team-item__panel ac-panel"></div>
+          </li>
+          <li class="team__item ac team-item">
+            <div class="team-item__header ac-header">
+              <button class="team-item__btn unit ac-trigger" type="button">
+                <div class="unit__inner">
+                  <figure class="unit__img-wrap">
+                    <div class="unit__img-inner">
+                      <picture>
+                        <source type="image/webp" srcset="/img/webp/unit1.webp 1x, /img/webp/unit1@2x.webp 2x" />
+                        <img class="unit__img" src="/img/unit1.jpj" srcset="/img/unit1.jpj 1x, /img/unit1@2x.jpj 2x" alt="Владимир Змановский" width="109" height="109" />
+                      </picture>
+                    </div>
+                  </figure>
+                  <div class="unit__box unit-box">
+                    <div class="unit-box__left">
+                      <h3 class="unit__name">Владимир Змановский</h3>
+                      <p class="unit__career">эксперт-строитель</p>
+                      <p class="unit__practice"><span>Опыт работы с 2012 г.</span><span>Высшее образование по специальности: «Экономика».</span>
+                      </p>
+                    </div>
+                    <div class="unit-box__right">
+                      <p class="unit__spec-header">Специализация</p>
+                      <ul class="unit__spec">
+                        <li class="unit__skill">Оценка имущества</li>
+                        <li class="unit__skill">Оценка ущерба</li>
+                        <li class="unit__skill">Оценка оборудования</li>
+                        <li class="unit__skill">Строительно-техническая экспертиза</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <figure class="unit__plus plus"><span class="plus__inner">
+                        <svg class="plus__icon" viewBox="0 0 32 32" width="32" height="32">
+                          <use xlink:href="/img/sprite.svg#plus"></use>
+                        </svg></span>
+                  </figure>
+                </div>
+              </button>
+              <div class="team-item diploma">
+                <div class="diploma__inner">
+                  <h4 class="diploma__titile">Дипломы и сертификаты</h4>
+                  <div class="diploma__swiper swiper swiper-container">
+                    <ul class="diploma__list swiper-wrapper">
+                      <li class="diploma__item swiper-slide">
+                        <a class="diploma__link glightbox" href="./img/slide1-1-large.png" data-gallery="unit6">
+                          <img class="diploma__img" src="./img/slide1-1.png" alt="диплом">
+                        </a>
+                      </li>
+                      <li class="diploma__item swiper-slide">
+                        <a class="diploma__link glightbox" href="./img/slide1-2-large.png" data-gallery="unit6">
+                          <img class="diploma__img" src="./img/slide1-2.png" alt="диплом">
+                        </a>
+                      </li>
+                      <li class="diploma__item swiper-slide">
+                        <a class="diploma__link glightbox" href="./img/slide1-3-large.png" data-gallery="unit6">
+                          <img class="diploma__img" src="./img/slide1-3.png" alt="диплом">
+                        </a>
+                      </li>
+                      <li class="diploma__item swiper-slide">
+                        <a class="diploma__link glightbox" href="./img/slide1-4-large.png" data-gallery="unit6">
+                          <img class="diploma__img" src="./img/slide1-4.png" alt="диплом">
+                        </a>
+                      </li>
+                      <li class="diploma__item swiper-slide">
+                        <a class="diploma__link glightbox" href="./img/slide1-5-large.png" data-gallery="unit6">
+                          <img class="diploma__img" src="./img/slide1-5.png" alt="диплом">
+                        </a>
+                      </li>
+                    </ul>
+                    <div class="swiper-pagination"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="team-item__panel ac-panel"></div>
+          </li>
+          <li class="team__item ac team-item">
+            <div class="team-item__header ac-header">
+              <button class="team-item__btn unit ac-trigger" type="button">
+                <div class="unit__inner">
+                  <figure class="unit__img-wrap">
+                    <div class="unit__img-inner">
+                      <picture>
+                        <source type="image/webp" srcset="/img/webp/unit1.webp 1x, /img/webp/unit1@2x.webp 2x" />
+                        <img class="unit__img" src="/img/unit1.jpj" srcset="/img/unit1.jpj 1x, /img/unit1@2x.jpj 2x" alt="Татьяна Смирнова" width="109" height="109" />
+                      </picture>
+                    </div>
+                  </figure>
+                  <div class="unit__box unit-box">
+                    <div class="unit-box__left">
+                      <h3 class="unit__name">Татьяна Смирнова</h3>
+                      <p class="unit__career">помощник оценщика</p>
+                      <p class="unit__practice"><span>Опыт работы с 2012 г.</span><span>Высшее образование по специальности: «Экономика».</span>
+                      </p>
+                    </div>
+                    <div class="unit-box__right">
+                      <p class="unit__spec-header">Специализация</p>
+                      <ul class="unit__spec">
+                        <li class="unit__skill">Оценка имущества</li>
+                        <li class="unit__skill">Оценка ущерба</li>
+                        <li class="unit__skill">Оценка оборудования</li>
+                        <li class="unit__skill">Строительно-техническая экспертиза</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <figure class="unit__plus plus"><span class="plus__inner">
+                        <svg class="plus__icon" viewBox="0 0 32 32" width="32" height="32">
+                          <use xlink:href="/img/sprite.svg#plus"></use>
+                        </svg></span>
+                  </figure>
+                </div>
+              </button>
+              <div class="team-item diploma">
+                <div class="diploma__inner">
+                  <h4 class="diploma__titile">Дипломы и сертификаты</h4>
+                  <div class="diploma__swiper swiper swiper-container">
+                    <ul class="diploma__list swiper-wrapper">
+                      <li class="diploma__item swiper-slide">
+                        <a class="diploma__link glightbox" href="./img/slide1-1-large.png" data-gallery="unit7">
+                          <img class="diploma__img" src="./img/slide1-1.png" alt="диплом">
+                        </a>
+                      </li>
+                      <li class="diploma__item swiper-slide">
+                        <a class="diploma__link glightbox" href="./img/slide1-2-large.png" data-gallery="unit7">
+                          <img class="diploma__img" src="./img/slide1-2.png" alt="диплом">
+                        </a>
+                      </li>
+                      <li class="diploma__item swiper-slide">
+                        <a class="diploma__link glightbox" href="./img/slide1-3-large.png" data-gallery="unit7">
+                          <img class="diploma__img" src="./img/slide1-3.png" alt="диплом">
+                        </a>
+                      </li>
+                      <li class="diploma__item swiper-slide">
+                        <a class="diploma__link glightbox" href="./img/slide1-4-large.png" data-gallery="unit7">
+                          <img class="diploma__img" src="./img/slide1-4.png" alt="диплом">
+                        </a>
+                      </li>
+                      <li class="diploma__item swiper-slide">
+                        <a class="diploma__link glightbox" href="./img/slide1-5-large.png" data-gallery="unit7">
+                          <img class="diploma__img" src="./img/slide1-5.png" alt="диплом">
+                        </a>
+                      </li>
+                    </ul>
+                    <div class="swiper-pagination"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="team-item__panel ac-panel"></div>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section class="law">
+      <div class="law__inner">
+        <div class="law__top container">
+          <h2 class="law__title title">У нас есть все необходимые сертификаты и лицензии на право выполнения работ</h2>
+          <div class="law__navigation navigation">
+            <div class="law-button-prev navigation__btn arr">
+              <svg class="arr__icon" viewBox="0 0 30 24" width="30" height="24">
+                <use xlink:href="/img/sprite.svg#arr"></use>
+              </svg>
+            </div>
+            <div class="law-button-next navigation__btn arr">
+              <svg class="arr__icon" viewBox="0 0 30 24" width="30" height="24">
+                <use xlink:href="/img/sprite.svg#arr"></use>
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="law__bottom">
+          <div class="law__swiper swiper swiper-container">
+            <ul class="law__list swiper-wrapper">
+              <li class="law__item swiper-slide">
+                <a class="law__link glightbox" href="./img/law.jpg" data-gallery="law">
+                  <img class="law__img" src="./img/law.jpg" alt="лицензия" width="202" height="286">
+                </a>
+              </li>
+              <li class="law__item swiper-slide">
+                <a class="law__link glightbox" href="./img/law.jpg" data-gallery="law">
+                  <img class="law__img" src="./img/law.jpg" alt="лицензия" width="202" height="286">
+                </a>
+              </li>
+              <li class="law__item swiper-slide">
+                <a class="law__link glightbox" href="./img/law.jpg" data-gallery="law">
+                  <img class="law__img" src="./img/law.jpg" alt="лицензия" width="202" height="286">
+                </a>
+              </li>
+              <li class="law__item swiper-slide">
+                <a class="law__link glightbox" href="./img/law.jpg" data-gallery="law">
+                  <img class="law__img" src="./img/law.jpg" alt="лицензия" width="202" height="286">
+                </a>
+              </li>
+              <li class="law__item swiper-slide">
+                <a class="law__link glightbox" href="./img/law.jpg" data-gallery="law">
+                  <img class="law__img" src="./img/law.jpg" alt="лицензия" width="202" height="286">
+                </a>
+              </li>
+              <li class="law__item swiper-slide">
+                <a class="law__link glightbox" href="./img/law.jpg" data-gallery="law">
+                  <img class="law__img" src="./img/law.jpg" alt="лицензия" width="202" height="286">
+                </a>
+              </li>
+              <li class="law__item swiper-slide">
+                <a class="law__link glightbox" href="./img/law.jpg" data-gallery="law">
+                  <img class="law__img" src="./img/law.jpg" alt="лицензия" width="202" height="286">
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="reviews">
+      <div class="reviews__inner container">
+        <h2 class="reviews__title title">Отзывы наших клиентов с сервиса 2гис</h2>
+        <ul class="reviews__list">
+          <li class="reviews__item reviews-card">
+            <div class="reviews-card__header"></div>
+            <p class="reviews-card__text"></p>
+            <div class="reviews-card__bottom"></div>
+          </li>
+          <li class="reviews__item reviews-card">
+            <div class="reviews-card__header"></div>
+            <p class="reviews-card__text"></p>
+            <div class="reviews-card__bottom"></div>
+          </li>
+          <li class="reviews__item reviews-card">
+            <div class="reviews-card__header"></div>
+            <p class="reviews-card__text"></p>
+            <div class="reviews-card__bottom"></div>
+          </li>
+          <li class="reviews__item reviews-card">
+            <div class="reviews-card__header"></div>
+            <p class="reviews-card__text"></p>
+            <div class="reviews-card__bottom"></div>
+          </li>
+          <li class="reviews__item reviews-card">
+            <div class="reviews-card__header"></div>
+            <p class="reviews-card__text"></p>
+            <div class="reviews-card__bottom"></div>
+          </li>
+          <li class="reviews__item reviews-card">
+            <div class="reviews-card__header"></div>
+            <p class="reviews-card__text"></p>
+            <div class="reviews-card__bottom"></div>
+          </li>
+          <li class="reviews__item reviews-card">
+            <div class="reviews-card__header"></div>
+            <p class="reviews-card__text"></p>
+            <div class="reviews-card__bottom"></div>
+          </li>
+          <li class="reviews__item reviews-card">
+            <div class="reviews-card__header"></div>
+            <p class="reviews-card__text"></p>
+            <div class="reviews-card__bottom"></div>
+          </li>
+          <li class="reviews__item reviews-card">
+            <div class="reviews-card__header"></div>
+            <p class="reviews-card__text"></p>
+            <div class="reviews-card__bottom"></div>
+          </li>
+          <li class="reviews__item reviews-card">
+            <div class="reviews-card__header"></div>
+            <p class="reviews-card__text"></p>
+            <div class="reviews-card__bottom"></div>
+          </li>
+          <li class="reviews__item reviews-card">
+            <div class="reviews-card__header"></div>
+            <p class="reviews-card__text"></p>
+            <div class="reviews-card__bottom"></div>
+          </li>
+          <li class="reviews__item reviews-card">
+            <div class="reviews-card__header"></div>
+            <p class="reviews-card__text"></p>
+            <div class="reviews-card__bottom"></div>
+          </li>
+          <li class="reviews__item reviews-card">
+            <div class="reviews-card__header"></div>
+            <p class="reviews-card__text"></p>
+            <div class="reviews-card__bottom"></div>
+          </li>
+          <li class="reviews__item reviews-card">
+            <div class="reviews-card__header"></div>
+            <p class="reviews-card__text"></p>
+            <div class="reviews-card__bottom"></div>
+          </li>
+          <li class="reviews__item reviews-card">
+            <div class="reviews-card__header"></div>
+            <p class="reviews-card__text"></p>
+            <div class="reviews-card__bottom"></div>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section class="faq">
+      <div class="faq__inner container">
+        <h2 class="faq__title title">Частые вопросы, которые задают нам клиенты</h2>
+        <ul class="faq__list">
+          <li class="faq__item ac">
+            <div class="faq__header ac-header">
+              <button class="faq__btn ac-trigger" type="button"><span>Что выдается по результатам оценки, экспертизы?</span>
+                <figure class="faq__plus plus"><span class="plus__inner">
+                      <svg class="plus__icon" viewBox="0 0 32 32" width="32" height="32">
+                        <use xlink:href="/img/sprite.svg#plus"></use>
+                      </svg></span>
+                </figure>
+              </button>
+            </div>
+            <div class="faq__panel ac-panel">
+              <p class="faq__text ac-text">Результатом оказания услуги является предоставление Заказчику отчета об оценке, экспертного заключения, либо заключения специалиста, составленного в письменной форме на русском языке и оформленного в соответствии с требованиями законодательства
+                РФ.</p>
+              <p class="faq__text ac-text">Заключение выдается в 1 экземпляре, если необходимо несколько экземпляров, просим Вас заранее предупреждать об этом.</p>
+            </div>
+          </li>
+          <li class="faq__item ac">
+            <div class="faq__header ac-header">
+              <button class="faq__btn ac-trigger" type="button"><span>Как долго проводится экспертиза или оценка?</span>
+                <figure class="faq__plus plus"><span class="plus__inner">
+                      <svg class="plus__icon" viewBox="0 0 32 32" width="32" height="32">
+                        <use xlink:href="/img/sprite.svg#plus"></use>
+                      </svg></span>
+                </figure>
+              </button>
+            </div>
+            <div class="faq__panel ac-panel">
+              <p class="faq__text ac-text">Каждое проводимое экспертами Центра исследование уникально и у каждого свой срок проведения, и он зависит от вида и объема исследуемых материалов.</p>
+              <p class="faq__text ac-text">Средний срок проведения исследования составляет 10 рабочих дней, он может быть сокращен по пожеланию клиента. В разделах «Экспертизы» вы можете подробнее ознакомиться со сроками проведения исследований и ценами.</p>
+            </div>
+          </li>
+          <li class="faq__item ac">
+            <div class="faq__header ac-header">
+              <button class="faq__btn ac-trigger" type="button"><span>Чем отличается судебная экспертиза от внесудебной?</span>
+                <figure class="faq__plus plus"><span class="plus__inner">
+                      <svg class="plus__icon" viewBox="0 0 32 32" width="32" height="32">
+                        <use xlink:href="/img/sprite.svg#plus"></use>
+                      </svg></span>
+                </figure>
+              </button>
+            </div>
+            <div class="faq__panel ac-panel">
+              <p class="faq__text ac-text">Процедура бывает судебной и внесудебной. В последнем случае выполняется, к примеру, для подачи претензии или искового заявления в суд. Обычная независимая оценка или экспертиза может проводиться по желанию физических или юридических лиц,
+                до начала судебного процесса.</p>
+              <p class="faq__text ac-text">Судебная экспертиза может быть назначена в арбитражном и гражданском процессе только -судом, в уголовном - судом, следователем, дознавателем. Никакое иное лицо не вправе назначать судебную экспертизу. Однако сторона имеет право заказать
+                внесудебное исследование специалиста и после, ходатайствовать о его приложении к материалам дела.</p>
+              <p class="faq__text ac-text">Суд может отклонить ходатайство о приобщении заключения без объяснения причин отклонения, но может и удовлетворить это ходатайство. Если суд принимает заключение то оно будет приравнено к письменным доказательствам (ст. 71 ГПК РФ, ст. 75
+                АПК РФ) или иным документам (ст. 84 УПК РФ).</p>
+            </div>
+          </li>
+          <li class="faq__item ac">
+            <div class="faq__header ac-header">
+              <button class="faq__btn ac-trigger" type="button"><span>Как мне назначить у вас судебную экспертизу?</span>
+                <figure class="faq__plus plus"><span class="plus__inner">
+                      <svg class="plus__icon" viewBox="0 0 32 32" width="32" height="32">
+                        <use xlink:href="/img/sprite.svg#plus"></use>
+                      </svg></span>
+                </figure>
+              </button>
+            </div>
+            <div class="faq__panel ac-panel">
+              <p class="faq__text ac-text">Чтобы назначить судебную экспертизу в нашем Центре независимой экспертизы и оценки «Стратегия оценки», Вам необходимо связаться с нами, предоставить подробности и номер дела в суде.</p>
+              <p class="faq__text ac-text">В кратчайшие сроки наши специалисты подготовят информационное письмо в суд о возможности проведения судебной экспертизы в нашем Центре, с указанием всей необходимой информации. Мы отправим это письмо Вам или в суд по электронной или обычной
+                почте, так же Вы сможете лично приехать и забрать письмо в нашем офисе.</p>
+            </div>
+          </li>
+          <li class="faq__item ac">
+            <div class="faq__header ac-header">
+              <button class="faq__btn ac-trigger" type="button"><span>Как правильно задать вопросы для экспертизы?</span>
+                <figure class="faq__plus plus"><span class="plus__inner">
+                      <svg class="plus__icon" viewBox="0 0 32 32" width="32" height="32">
+                        <use xlink:href="/img/sprite.svg#plus"></use>
+                      </svg></span>
+                </figure>
+              </button>
+            </div>
+            <div class="faq__panel ac-panel">
+              <p class="faq__text ac-text">С примерным перечнем вопросов Вы можете ознакомиться в разделах «Экспертизы». В них подробно описаны все проводимые Центром экспертизы и перечень наиболее актуальных вопросов.</p>
+              <p class="faq__text ac-text">Если вопросы Вам не подходят, то просто закажите обратный звонок, наши эксперты Вам обязательно помогут.</p>
+            </div>
+          </li>
+          <li class="faq__item ac">
+            <div class="faq__header ac-header">
+              <button class="faq__btn ac-trigger" type="button"><span>Можно ли провести оценку без осмотра объекта?</span>
+                <figure class="faq__plus plus"><span class="plus__inner">
+                      <svg class="plus__icon" viewBox="0 0 32 32" width="32" height="32">
+                        <use xlink:href="/img/sprite.svg#plus"></use>
+                      </svg></span>
+                </figure>
+              </button>
+            </div>
+            <div class="faq__panel ac-panel">
+              <p class="faq__text ac-text">Да, в ряде случаев, осмотр объекта не обязателен, например при оценке имущества для нотариуса, оценке земельных участков.</p>
+            </div>
+          </li>
+          <li class="faq__item ac">
+            <div class="faq__header ac-header">
+              <button class="faq__btn ac-trigger" type="button"><span>Что входит в отчет об оценке? Что я получу в результате оценки?</span>
+                <figure class="faq__plus plus"><span class="plus__inner">
+                      <svg class="plus__icon" viewBox="0 0 32 32" width="32" height="32">
+                        <use xlink:href="/img/sprite.svg#plus"></use>
+                      </svg></span>
+                </figure>
+              </button>
+            </div>
+            <div class="faq__panel ac-panel">
+              <p class="faq__text ac-text">Итогом нашего сотрудничества является &quot;Отчет об оценке&quot;. Это документ размером до 200 страниц, имеющий регламентированную структуру и разделы:</p>
+              <p class="faq__text ac-text">Задание на оценку ;</p>
+              <p class="faq__text ac-text">Ограничения и пределы полученного результата;</p>
+              <p class="faq__text ac-text">Глоссарий (расшифровка терминов);</p>
+              <p class="faq__text ac-text">Анализ рынка объекта оценки;</p>
+              <p class="faq__text ac-text">Расчет стоимости объекта ;</p>
+              <p class="faq__text ac-text">Итоговые выводы;</p>
+              <p class="faq__text ac-text">Приложения.</p>
+            </div>
+          </li>
+          <li class="faq__item ac">
+            <div class="faq__header ac-header">
+              <button class="faq__btn ac-trigger" type="button"><span>Могу ли я получить копию ваших разрешительных документов?</span>
+                <figure class="faq__plus plus"><span class="plus__inner">
+                      <svg class="plus__icon" viewBox="0 0 32 32" width="32" height="32">
+                        <use xlink:href="/img/sprite.svg#plus"></use>
+                      </svg></span>
+                </figure>
+              </button>
+            </div>
+            <div class="faq__panel ac-panel">
+              <p class="faq__text ac-text">Полный комплект разрешительных документов приобщается к каждому отчету об оценке.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section class="contacts">
+      <div class="contacts__inner container">
+        <h2 class="contacts__title title">Контакты</h2>
+        <div class="contacts__content">
+          <div class="contacts__left hookup">
+            <ul class="hookup__list">
+              <li class="hookup__item city">
+                <label class="city__label" for="#city">Выбрать город</label>
+                <select class="city__select" id="city" name="city"></select>
+              </li>
+            </ul>
+            <ul class="hookup__data data">
+              <li class="data__item data__item--addr"></li>
+              <li class="data__item">
+                <a class="data__link data__link--mail" href="#"></a>
+              </li>
+              <li class="data__item">
+                <a class="data__link data__link--tel" href="#"></a>
+              </li>
+            </ul>
+          </div>
+          <div class="contacts__right map">
+            <div class="map__inner" id="map"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="discount discount--search">
+      <div class="discount__inner container">
+        <h2 class="discount__title title">Не нашли, что искали?</h2>
+        <div class="discount__quick-wrap">
+          <div class="quick">
+            <div class="quick__block">
+              <div class="quick__block-inner">
+                <figure class="quick__img-wrap"></figure>
+                <p class="quick__text">
+                  Задайте свой вопрос специалисту, прямо сейчас и
+                  <span>получите ответ в&nbsp;течение 1&nbsp;минуты</span>
+                  и скидку на&nbsp;наши услуги
+                </p>
+              </div>
+            </div>
+            <ul class="quick__social social">
+              <li class="social__item">
+                <div class="social__inner">
+                  <a class="social__link social__link--tg" href="https://telegram.me/YourUsernameHere" aria-label="мы в телеграмм" target="_blank"></a>
+                </div>
+              </li>
+              <li class="social__item">
+                <div class="social__inner">
+                  <a class="social__link social__link--whatsapp" href="https://wa.me/79131765996?text=Здравствуйте%2C+у+меня+есть+вопрос" aria-label="мы в вотсап" target="_blank"></a>
+                </div>
+              </li>
+              <li class="social__item">
+                <div class="social__inner">
+                  <a class="social__link social__link--viber" href="https://vibr.cc/79131765996" aria-label="мы в вайбер" target="_blank"></a>
+                </div>
+              </li>
+              <li class="social__item">
+                <div class="social__inner">
+                  <a class="social__link social__link--phone" href="tel:+78002007461" aria-label="наш телефон"></a>
+                </div>
+              </li>
+            </ul><a class="quick__link consultation-btn" href="#">Оставить заявку</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="modal modal--consultation consultation" hidden>
+      <div class="consultation__wrapper">
+        <div class="consultation__inner container">
+          <button class="modal__close modal-close consultation__close" type="button" aria-label="закрыть окно"></button>
+          <div class="consultation__info consultation-info">
+            <h2 class="consultation__title consultation-info__title">Заявка на&nbsp;консультацию со&nbsp;специалистом</h2>
+            <div class="consultation-info__block">
+              <h3 class="consultation-info__sub-title consultation-subtitle">
+                  <figure class="consultation-subtitle__img"></figure><span class="consultation-subtitle__text">На консультации вы получите:</span>
+                </h3>
+              <ul class="consultation-info__list">
+                <li class="consultation-info__item">Бесплатную юридическую консультацию</li>
+                <li class="consultation-info__item">Помощь в решении вашей проблемы, рассмотрение всех вариантов</li>
+                <li class="consultation-info__item">Подробное разъяснение плана достижения желаемой цели</li>
+              </ul>
+            </div>
+          </div>
+          <div class="consultation__form consultation-form">
+            <form class="consultation-form__inner" action="#" method="post">
+              <legend class="consultation-form__title">Оставьте контактные данные</legend>
+              <div class="consultation-form__block">
+                <label class="consultation-form__label" for="consultation-name">Введите ваше имя</label>
+                <input class="consultation-form__input" id="consultation-name" type="text" name="name" placeholder="Введите ваше имя" required>
+              </div>
+              <div class="consultation-form__block">
+                <label class="consultation-form__label" for="consultation-tel">Введите ваш телефон</label>
+                <input class="consultation-form__input" id="consultation-tel" type="text" name="tel" placeholder="Введите ваш телефон" required>
+              </div>
+              <button class="consultation__btn" type="submit">Получить консультацию</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="modal modal--success success" hidden>
+      <div class="success__wrapper">
+        <div class="success__inner container">
+          <button class="modal__close modal-close success__close" type="button" aria-label="закрыть окно"></button>
+          <div class="success__thanks thanks">
+            <figure class="thanks__img"></figure>
+            <h2 class="thanks__title">Спасибо, Ваша заявка принята</h2>
+            <p class="thanks__text">В ближайшее время мы свяжимся с Вами и уточним все необходимые детали.</p>
+          </div>
+        </div>
       </div>
     </section>
   </main>
   <footer class="main-footer">
-    <div class="main-footer__inner container">
-      <div class="main-footer__top"></div>
-      <div class="main-footer__bottom"></div>
+    <div class="main-footer__inner">
+      <div class="main-footer__top container">
+        <p class="main-footer__copy"><span>2022 © ООО "Экспертный Центр "Оценщики"</span><span>ИНН 3849067890 КПП 384901001</span>
+        </p>
+        <a class="main-footer__logo" href="/">
+          <svg class="footer-logo__icon" viewBox="0 0 53 53" width="53" height="53">
+            <use xlink:href="/img/sprite.svg#footer-logo"></use>
+          </svg>
+        </a><a class="main-footer__politic" href="#">Политика конфиденциальности</a>
+      </div>
+      <div class="main-footer__bottom footer-bottom">
+        <div class="footer-bottom__inner container">
+          <p class="main-footer__ofert">Информация на сайте не является публичной офертой, определяемая Статьей 437(2) Гражданского кодекса РФ.</p>
+        </div>
+      </div>
     </div>
   </footer>
+  <script src="https://api-maps.yandex.ru/2.1/?apikey=cf1c1431-1386-4d22-ba10-fe09e8ffcd25&amp;lang=ru_RU" type="text/javascript"></script>
   <script src="/js/script.js"></script>
 </body>
 
