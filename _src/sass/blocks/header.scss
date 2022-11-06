@@ -22,7 +22,7 @@
     margin-right: auto;
   }
 
-  &__nav {
+  &__nav-wrap {
   }
 
   &__icon-box {
@@ -59,6 +59,25 @@
   margin-left: 10px;
   margin-right: auto;
 
+  &__title {
+    display: none;
+
+    @include mw($empty) {
+      display: block;
+      padding-left: 20px;
+      margin-bottom: 52px;
+      margin-top: 40px;
+    }
+
+    @include mw($tb) {
+      margin-bottom: 52px;
+    }
+
+    @include mw($ph) {
+      margin-bottom: 52px;
+    }
+  }
+
   &__list {
     display: flex;
     align-items: center;
@@ -67,6 +86,7 @@
     @include mw($empty) {
       flex-direction: column;
       align-items: flex-start;
+      border-top: 0.5px solid #e4e4e4;
     }
   }
 
@@ -140,6 +160,7 @@
       height: 60px;
       justify-content: center;
       align-items: center;
+      min-width: auto;
     }
   }
 
@@ -159,6 +180,20 @@
       height: 60px;
       background-color: transparent;
       border-radius: 0;
+    }
+
+    &--geo {
+      @include mw($tb) {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        pointer-events: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
     }
 
     & svg {
@@ -210,7 +245,27 @@
   position: relative;
   cursor: pointer;
 
+  @include mw($tb) {
+    position: relative;
+    flex-direction: column;
+  }
+
+  &__block {
+    @include mw($tb) {
+      flex-grow: 1;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
   &__list-wrap {
+    @include mw($tb) {
+      flex-grow: 1;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+    }
   }
 
   &__list {
@@ -250,9 +305,22 @@
   }
 
   &__select {
+    @include mw($tb) {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
   }
 
   &__select-container {
+  }
+
+  & .customSelect {
+    @include mw($tb) {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
   }
 
   & .custom-select-opener {
@@ -269,6 +337,13 @@
       opacity: 0.6;
     }
 
+    @include mw($tb) {
+      font-size: 0;
+      flex-grow: 1;
+      margin-top: 0;
+      width: 100%;
+    }
+
     &::after {
       content: "";
       width: 0;
@@ -278,6 +353,10 @@
       border-color: #20262f transparent transparent transparent;
       margin-left: 2px;
       transform: translateY(2px);
+
+      @include mw($tb) {
+        content: none;
+      }
     }
   }
 
@@ -288,11 +367,14 @@
     left: -15px;
     background-color: #fff;
     border-radius: 8px;
-    border: 1px solid transparent;
+    border: none;
     padding-top: 0px;
     padding-bottom: 0px;
-
     transition: 0.5s;
+
+    @include mw($tb) {
+      top: 120%;
+    }
   }
 
   & .is-open .custom-select-panel {
@@ -376,20 +458,12 @@
 }
 
 .hc-offcanvas-nav .nav-container {
-  top: 60px;
+  top: 89px;
   background-color: #ffffff;
   border-top: 0.5px solid #e3e4e5;
 
-  @include mw($empty) {
-    top: 290px;
-  }
-
   @include mw($tb) {
-    top: 200px;
-  }
-
-  @include mw($ph) {
-    top: 195px;
+    top: 60px;
   }
 }
 

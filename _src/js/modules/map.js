@@ -2,6 +2,8 @@
 /* eslint-disable no-undef */
 import officesList from "./offices";
 
+export const winWidth = window.innerWidth;
+
 const getMap = () => {
   let myMap;
   const placemarkCollections = {};
@@ -36,7 +38,7 @@ const getMap = () => {
           {
             iconLayout: "default#image",
             iconImageHref: "./img/marker.png",
-            iconImageSize: [48, 60],
+            iconImageSize: winWidth > 601 ? [48, 60] : [27, 34],
           }
         );
         if (!placemarkList[i]) placemarkList[i] = {};

@@ -4,13 +4,17 @@ import officesList from "./offices";
 import { changeValueCity } from "./city";
 
 const linkTel = document.querySelector(".icon-box__link--consultation");
-const linkTelText = linkTel.querySelector(".icon-box__text");
 const selectGeo = customSelect(".geo__select")[0];
 
 export const changeValueGeo = (elem) => {
+  if (linkTel) {
+    const linkTelText = linkTel.querySelector(".icon-box__text");
+
+    linkTelText.textContent = elem.tel;
+  }
+
   selectGeo.value = elem.value;
   linkTel.href = `tel:${elem.link}`;
-  linkTelText.textContent = elem.tel;
 };
 
 const makeSelectGeo = () => {
@@ -21,14 +25,11 @@ const makeSelectGeo = () => {
     option.value = item.value;
     selectGeo.append(option);
   }
-
   changeValueGeo(officesList[0]);
-
   selectGeo.select.addEventListener("change", (e) => {
     const item = officesList.filter((elem) => {
       return elem.value === e.target.value;
     })[0];
-
     changeValueGeo(item);
     changeValueCity(item);
   });

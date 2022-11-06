@@ -6,6 +6,8 @@
 
 -const geo = [geo1,geo2,geo3];
 
+-const nav = [{text: 'Услуги',	link: 'services'}, {text: 'Процесс',	link: 'process'}, {text: 'Команда',	link: 'team'}, {text: 'Отзывы',	link: 'reviews'}, {text: 'Контакты',	link: 'contacts'}]
+
 
 
 
@@ -15,17 +17,27 @@ header.header#header
 
 		a.header__logo.logo(href="/index.html")
 			+img-retina(`logo`, `png`, `логотип`, `logo__img`, `128`, `52`)
+
 		nav.header__nav.nav
+
+			h2.nav__title.promo__title Независимые
+				br
+				|
+				| экспертизы и оценка
+				|
+				br
+				span от 1 дня в Иркутске
+
 			ul.nav__list
 
-				each val in [{text: 'Услуги',	link: 'services'}, {text: 'Процесс',	link: 'process'}, {text: 'Команда',	link: 'team'}, {text: 'Отзывы',	link: 'reviews'}, {text: 'Контакты',	link: 'contacts'}]
+				each val in nav
 					li.nav__item
 						a.nav__link(href=`#${val.link}`)= val.text
 
 
 		.header__icon-box.icon-box
 			.icon-box__link.geo(role="button")
-				span.icon-box__icon-wrap
+				span.icon-box__icon-wrap.icon-box__icon-wrap--geo
 					+svg('geo', 13, 13, 'geo')
 				.geo__block
 					.icon-box__inner
