@@ -9,12 +9,21 @@
     display: flex;
     justify-content: space-between;
     margin-bottom: 60px;
+
+    @include mw($tb) {
+      margin-bottom: 34px;
+    }
   }
 
   &__bottom {
     max-width: 1440px;
     margin: 0 auto;
     padding-left: 94px;
+
+    @include mw($tb) {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
   }
 
   &__title {
@@ -22,6 +31,13 @@
     line-height: 1;
     max-width: 829px;
     color: rgba(#20262f, 0.2);
+
+    @include mw($tb) {
+      @include font-size(24px);
+    }
+    @include mw($ph) {
+      @include font-size(24px);
+    }
   }
 
   &__navigation {
@@ -38,19 +54,37 @@
 
   &__item {
     max-width: 350px;
+
+    @include mw($tb) {
+      max-width: none;
+    }
   }
 
   &__link {
     display: flex;
     justify-content: center;
-
-    background: #ffffff;
+    background-image: url("../../img/law-bg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: right top;
     border-radius: 16px;
     padding-top: 51px;
     padding-bottom: 51px;
+
+    @include mw($ph) {
+      padding-top: 40px;
+      padding-bottom: 40px;
+    }
   }
 
   &__img {
+    width: 202px;
+    height: 286px;
+
+    @include mw($ph) {
+      width: 57%;
+      height: auto;
+    }
   }
 }
 .container {
@@ -61,6 +95,10 @@
   display: flex;
   align-self: flex-end;
   cursor: pointer;
+
+  @include mw($tb) {
+    display: none;
+  }
 
   &__btn {
     width: 116px;
@@ -86,6 +124,29 @@
     }
   }
 }
+
+.pagination {
+  display: none;
+  margin-top: 20px;
+  justify-content: space-between;
+
+  @include mw($tb) {
+    display: flex;
+  }
+
+  &__bullet {
+    border-radius: 50px;
+    height: 4px;
+    width: calc((100% / 7) - 2px);
+    background-color: #d2d4d5;
+    transition: 0.3s;
+
+    &--active {
+      background-color: #ff794c;
+    }
+  }
+}
+
 .law-button-prev {
 }
 .law-button-next {

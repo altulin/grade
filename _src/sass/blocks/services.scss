@@ -106,6 +106,10 @@
   padding-left: 24px;
   border: 1px solid #d4d7df;
 
+  @include mw($ph) {
+    padding-left: 10px;
+  }
+
   @include hocus() {
     border-color: #ff794c;
   }
@@ -137,6 +141,10 @@
       margin-left: -5px;
       padding-left: 21px;
     }
+
+    @include mw($ph) {
+      margin-left: -11px;
+    }
   }
 
   @include mw($dt) {
@@ -161,6 +169,7 @@
     @include mw($ph) {
       padding-top: 7px;
       padding-bottom: 7px;
+      padding-left: 8px;
     }
   }
 
@@ -176,6 +185,13 @@
     background-size: cover;
     margin-right: 16px;
 
+    @include mw($ph) {
+      width: 20px;
+      height: 20px;
+      margin-right: 5px;
+      flex-shrink: 0;
+    }
+
     &--grade {
       background-image: url("../../img/grade.png");
     }
@@ -190,13 +206,18 @@
     letter-spacing: -0.04em;
 
     @include mw($ph) {
-      font-size: 16px;
+      font-size: 15px;
     }
   }
 
   &__num {
     font-size: 16px;
     margin-left: 5px;
+
+    @include mw($ph) {
+      margin-left: 3px;
+      font-size: 10px;
+    }
   }
 }
 .tabs-link {

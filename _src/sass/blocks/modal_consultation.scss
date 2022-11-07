@@ -54,6 +54,13 @@
       padding-left: 30px;
       padding-right: 30px;
     }
+
+    @include mw($ph) {
+      padding-left: 0;
+      padding-right: 0;
+      padding-top: 60px;
+      padding-bottom: 50px;
+    }
   }
 
   &__info {
@@ -79,6 +86,14 @@
     @include padding-bottom(40px);
     width: 100%;
     cursor: pointer;
+
+    @include mw($ph) {
+      font-size: 18px;
+      padding-left: 16px;
+      padding-right: 16px;
+      padding-top: 26px;
+      padding-bottom: 26px;
+    }
   }
 }
 .modal-close {
@@ -92,6 +107,10 @@
   background-size: cover;
   cursor: pointer;
   transition: 0.3s;
+
+  @include mw($ph) {
+    right: 30px;
+  }
 
   @include hocus() {
     opacity: 0.8;
@@ -110,6 +129,11 @@
   @include mw($empty) {
     width: 100%;
     margin-bottom: 30px;
+  }
+
+  @include mw($ph) {
+    padding-left: 20px;
+    padding-right: 20px;
   }
 
   &__title {
@@ -153,6 +177,13 @@
 
     & + li {
       @include margin-top(32px);
+      @include mw($ph) {
+        margin-top: 18px;
+      }
+    }
+
+    @include mw($ph) {
+      font-size: 18px;
     }
   }
 }
@@ -167,6 +198,7 @@
     background-image: url("../../img/img.png");
     background-position: center;
     background-size: cover;
+    flex-shrink: 0;
   }
 
   &__text {
@@ -177,6 +209,11 @@
     color: #ffffff;
     margin-left: 32px;
     @include margin-bottom(32px);
+
+    @include mw($ph) {
+      margin-left: 16px;
+      font-size: 20px;
+    }
   }
 }
 
@@ -199,6 +236,15 @@
     margin-left: 0;
   }
 
+  @include mw($ph) {
+    padding-left: 16px;
+    padding-right: 16px;
+    background-image: none;
+    background-color: #fff;
+    border-radius: 0%;
+    width: 100%;
+  }
+
   &__inner {
     flex-grow: 1;
     max-width: 482px;
@@ -211,6 +257,10 @@
     letter-spacing: -0.04em;
     color: #d2d4d5;
     @include margin-bottom(48px);
+
+    @include mw($ph) {
+      font-size: 24px;
+    }
   }
 
   &__label {
@@ -241,6 +291,18 @@
       line-height: 132%;
       letter-spacing: -0.02em;
       color: #20262f;
+
+      @include mw($ph) {
+        font-size: 18px;
+      }
+    }
+
+    @include mw($ph) {
+      font-size: 18px;
+      padding-left: 16px;
+      padding-right: 16px;
+      padding-top: 26px;
+      padding-bottom: 26px;
     }
   }
 }

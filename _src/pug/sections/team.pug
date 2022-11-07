@@ -1,4 +1,4 @@
-section.team
+section.team(id=`${nav[2].link}`)
 	.team__inner.container
 		h2.team__title.title Команда профессионалов с&nbsp;высокой компетенцией
 
@@ -17,18 +17,32 @@ section.team
 									.unit-box__left
 										h3.unit__name= val.name
 										p.unit__career= val.career
-										p.unit__practice
+										p.unit__practice.unit__practice--dt
 											each m in val.practice
 												span= m
-									.unit-box__right
+									.unit-box__right.unit-box__right--dt
 										p.unit__spec-header Специализация
 										ul.unit__spec
 											each n in val.skill
 												li.unit__skill= n
 
-								figure.unit__plus.plus
+								figure.unit__plus.plus.plus--dt
 									span.plus__inner
 										+svg('plus',32,32,'plus')
+
+
+
+							figure.unit__plus.plus.plus--tb
+									span.plus__inner.plus__inner--tb
+
+							.unit__mobile.unit-mobile
+								p.unit-mobile__practice
+									each m in val.practice
+												span= m
+
+								ul.unit-mobile__spec
+											each n in val.skill
+												li.unit-mobile__skill= n
 
 						.team-item.diploma
 							.diploma__inner

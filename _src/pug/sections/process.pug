@@ -1,11 +1,14 @@
-section.process
+section.process(id=`${nav[1].link}`)
 	.process__inner.container
 		h2.process__title.title Процесс работы
-		ul.process__list
-			each val,i in process
-				li.process__item.process-item(class=`process-item--${val.name}`)
-					.process-item__inner
-						p.process__num.title= `${i+1}`
-						.process-item__block
-							h3.process-item__title= val.title
-							p.process-item__text= val.text
+		.process__swiper.swiper.swiper-container
+			ul.process__list.swiper-wrapper
+				each val,i in process
+					li.process__item.process-item.swiper-slide(class=`process-item--${val.name}`)
+						.process-item__inner
+							p.process__num.title= `${i+1}`
+							.process-item__block
+								h3.process-item__title= val.title
+								p.process-item__text= val.text
+
+			.process__pagination

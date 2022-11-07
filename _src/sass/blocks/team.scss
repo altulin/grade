@@ -43,6 +43,10 @@
   &__item {
     & + li {
       margin-top: 16px;
+
+      @include mw($tb) {
+        margin-top: 8px;
+      }
     }
   }
 }
@@ -56,8 +60,13 @@
 .team-item {
   &__header {
     display: flex;
-    // align-items: center;
+    justify-content: space-between;
     position: relative;
+    width: 100%;
+
+    @include mw($tb) {
+      flex-direction: column;
+    }
   }
 
   &__btn {
@@ -83,24 +92,49 @@
     }
   }
 
+  @include mw($tb) {
+    padding: 0;
+    background-color: transparent;
+    border-radius: 0%;
+    display: flex;
+  }
+
   &__inner {
     display: flex;
-    // justify-content: space-between;
+    width: 100%;
     align-items: center;
+
+    @include mw($tb) {
+      background-color: #ffffff;
+      border: 1px solid #e6e6e6;
+      border-radius: 8px;
+      padding: 16px;
+      padding-right: 0;
+      align-items: stretch;
+      width: 86%;
+    }
   }
 
   &__img-wrap {
-    display: block;
-    width: 8%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 109px;
     border-radius: 8px;
     overflow: hidden;
     flex-shrink: 0;
+
+    @include mw($ph) {
+      width: 80px;
+    }
   }
 
   &__img-inner {
     width: 100%;
     padding-top: 100%;
     position: relative;
+    border-radius: 8px;
+    overflow: hidden;
   }
 
   &__img {
@@ -116,12 +150,21 @@
 
   &__name {
     @include font-size(32px);
+    color: #20262f;
     margin-bottom: auto;
     line-height: 1;
     letter-spacing: -0.02em;
     font-weight: 350;
     max-width: 240px;
     text-align: left;
+
+    @include mw($tb) {
+      margin-bottom: 8px;
+    }
+
+    @include mw($ph) {
+      @include font-size(18px);
+    }
   }
 
   &__practice {
@@ -146,6 +189,14 @@
     line-height: 100%;
     letter-spacing: -0.02em;
     color: #9d9d9d;
+
+    @include mw($tb) {
+      text-align: left;
+    }
+
+    @include mw($ph) {
+      @include font-size(12px);
+    }
   }
 
   &__spec-header {
@@ -183,6 +234,10 @@
   margin-left: 2.5%;
   margin-right: auto;
 
+  @include mw($tb) {
+    margin-left: 16px;
+  }
+
   &__left {
     display: flex;
     flex-direction: column;
@@ -190,6 +245,10 @@
     flex-grow: 1;
     width: 100%;
     max-width: 340px;
+
+    @include mw($tb) {
+      max-width: none;
+    }
   }
 
   &__right {
@@ -198,11 +257,45 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+
+    @include mw($tb) {
+      &--dt {
+        display: none;
+      }
+    }
   }
 }
 
 .plus {
   width: 9.5%;
+
+  @include mw($empty) {
+    width: 80px;
+    flex-shrink: 0;
+  }
+
+  &--dt {
+    @include mw($tb) {
+      display: none;
+    }
+  }
+
+  &--tb {
+    display: none;
+    align-self: stretch;
+    background-color: #ffffff;
+    border: 1px solid #e6e6e6;
+    border-radius: 8px;
+
+    @include mw($tb) {
+      display: flex;
+      flex-direction: column;
+      width: 14%;
+      height: auto;
+      margin-left: -1px;
+      flex-shrink: 0;
+    }
+  }
 
   &__inner {
     width: 100%;
@@ -211,6 +304,16 @@
     position: relative;
     background-color: #f1f1f1;
     border-radius: 50%;
+
+    &--tb {
+      border-radius: 0%;
+      flex-grow: 1;
+      background-color: transparent;
+      background-image: url("../../img/svg/plus-tb.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+      padding-top: 0;
+    }
   }
 
   &__icon {
@@ -226,11 +329,9 @@
 }
 
 .diploma {
-  width: 100%;
-  max-width: 321px;
+  width: 26%;
   background-color: #ffffff;
   border-radius: 8px;
-  margin-left: 8px;
   padding: 24px;
   visibility: hidden;
   opacity: 0;
@@ -240,11 +341,29 @@
   display: flex;
   flex-direction: column;
 
+  @include mw($tb) {
+    width: 100%;
+    border: 1px solid #e6e6e6;
+    margin-top: -1px;
+    padding: 16px;
+  }
+
   &__inner {
     display: flex;
     flex-direction: column;
     align-items: center;
     flex-grow: 1;
+
+    @include mw($tb) {
+      align-items: flex-start;
+      position: relative;
+
+      & .swiper-pagination {
+        text-align: right;
+        top: 0;
+        bottom: auto;
+      }
+    }
   }
 
   &__titile {
@@ -255,12 +374,22 @@
     text-transform: uppercase;
     color: #9d9d9d;
     margin-bottom: 24px;
+
+    @include mw($tb) {
+      margin-bottom: 16px;
+      position: absolute;
+    }
   }
 
   &__swiper {
     width: 100%;
     height: 100%;
     padding-bottom: 50px;
+
+    @include mw($tb) {
+      padding-bottom: 0;
+      padding-top: 40px;
+    }
   }
 
   &__list {
@@ -290,13 +419,85 @@
 .swiper-slide {
 }
 
+.unit-mobile {
+  display: none;
+  background-color: #ffffff;
+  border: 1px solid #e6e6e6;
+  border-radius: 8px;
+  padding: 16px;
+  padding-left: 12px;
+  margin-top: -1px;
+  flex-direction: column;
+  flex-grow: 1;
+
+  &__practice {
+    padding-left: 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 100%;
+    letter-spacing: -0.02em;
+    color: #20262f;
+    margin-bottom: 12px;
+    text-align: left;
+  }
+
+  &__spec {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__skill {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 100%;
+    letter-spacing: -0.04em;
+    margin: 4px;
+    border-radius: 4px;
+    background-color: #f1f1f1;
+    padding: 8px;
+    color: #20262f;
+  }
+}
+
 [aria-expanded="true"] {
-  width: auto;
-  flex-shrink: 0;
+  width: calc(74% - 8px);
+
+  @include mw($tb) {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .plus--tb {
+    @include mw($tb) {
+      display: flex;
+    }
+
+    & span {
+      background-image: url("../../img/svg/minus-tb.svg");
+    }
+  }
+
+  .unit-mobile {
+    @include mw($tb) {
+      display: flex;
+    }
+  }
 
   .unit {
     &__box {
       flex-direction: column;
+      margin-right: 0;
+      width: calc(62% - 8px);
+      margin-left: 0;
+      flex-grow: 0;
+
+      @include mw($tb) {
+        width: 100%;
+        margin-left: 16px;
+      }
     }
 
     &__plus {
@@ -310,18 +511,22 @@
 
     &__inner {
       align-items: stretch;
+      justify-content: space-between;
+      flex-grow: 1;
     }
 
     &__practice {
       display: flex;
+
+      @include mw($tb) {
+        &--dt {
+          display: none;
+        }
+      }
     }
   }
 
   .unit-box {
-    margin-left: 8px;
-    margin-right: 0;
-    width: 100%;
-    max-width: 560px;
     &__left {
       flex-grow: 0;
       max-width: none;
@@ -330,6 +535,13 @@
       background-color: #ffffff;
       margin-bottom: 8px;
       padding: 24px;
+
+      @include mw($tb) {
+        min-height: auto;
+        border-radius: 0%;
+        margin-bottom: 0;
+        padding: 0;
+      }
     }
 
     &__right {

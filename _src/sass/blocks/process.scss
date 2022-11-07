@@ -14,13 +14,30 @@
   &__list {
     display: flex;
     justify-content: space-between;
+    width: 100%;
+    box-sizing: inherit;
 
     @include mw($tb) {
-      flex-direction: column;
+      // box-sizing: content-box;
+      margin-bottom: 20px;
     }
   }
 
-  &__item {
+  &__pagination {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__bullet {
+    height: 4px;
+    border-radius: 50px;
+    width: calc((100% / 3) - 16px);
+    transition: 0.3s;
+
+    &.swiper-pagination-bullet-active {
+      background-color: #ff794c;
+    }
   }
 
   &__num {
@@ -50,10 +67,6 @@
     width: 100%;
     padding: 20px;
     min-height: 400px;
-
-    & + li {
-      margin-top: 30px;
-    }
   }
 
   @include mw($ph) {

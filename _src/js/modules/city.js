@@ -51,13 +51,13 @@ const makeSelectCity = () => {
     })[0];
     changeValueCity(item);
     changeValueGeo(item);
-    myMap
-      .setBounds(placemarkCollections[e.target.value].getBounds(), {
-        checkZoomRange: true,
-      })
-      .then(function () {
-        if (myMap.getZoom() > 15) myMap.setZoom(15); // Если значение zoom превышает 15, то устанавливаем 15.
-      });
+    // myMap
+    //   .setBounds(placemarkCollections[e.target.value].getBounds(), {
+    //     checkZoomRange: true,
+    //   })
+    //   .then(function () {
+    //     if (myMap.getZoom() > 15) myMap.setZoom(15); // Если значение zoom превышает 15, то устанавливаем 15.
+    //   });
   });
 };
 
