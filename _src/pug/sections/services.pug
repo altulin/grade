@@ -23,10 +23,10 @@ section.services(id=`${nav[0].link}`)
 									span.skill__text= `Оценка ${val.text}`
 									span.skill__price= val.price
 					ul.tabs__content.expertise#expertise.skill
-						each val in skill
+						each val in exp
 							li.skill__item
 								a.skill__link
-									span.skill__text= `Экспертиза ${val.text}`
+									span.skill__text= `${val.text}`
 									span.skill__price= val.price
 		.services__tabs-info-inner.container
 			article.tabs__info.tabs-info
