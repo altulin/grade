@@ -11,10 +11,10 @@ section.law
 		.law__bottom
 			.law__swiper.swiper.swiper-container
 				ul.law__list.swiper-wrapper
-					while n < 7
+					while n < 6
 						li.law__item.swiper-slide
-							a.law__link.glightbox(href=`./img/law.jpg`  data-gallery=`law`)
-								img.law__img(src=`./img/law.jpg`, alt="лицензия" width='202' height='286')
+							a.law__link.glightbox(href=`./img/law-${n+1}@2x.jpg`  data-gallery=`law`)
+								img.law__img(src=`./img/law-${n+1}.jpg`, alt="лицензия" width='202' height='286')
 						-n++
 
 					-n=0

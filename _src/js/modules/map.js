@@ -3,10 +3,13 @@
 import officesList from "./offices";
 
 export const winWidth = window.innerWidth;
+// eslint-disable-next-line import/no-mutable-exports
+export let myMap;
+// eslint-disable-next-line import/no-mutable-exports
+export let placemarkCollections;
 
 const getMap = () => {
-  let myMap;
-  const placemarkCollections = {};
+  placemarkCollections = {};
   const placemarkList = {};
 
   // Список городов и офисов в них

@@ -1,8 +1,16 @@
 .doc {
-  padding-top: 50px;
-  margin-bottom: 100px;
-  @include font("Gilroy");
-  color: #7a838d;
+  background-color: #fff;
+  overflow-y: scroll;
+  justify-content: flex-start;
+
+  &__wrapper {
+    background-color: #ffffff;
+    padding-top: 50px;
+    padding-bottom: 80px;
+  }
+
+  &__close {
+  }
 
   & h1 {
     font-weight: 600;
@@ -58,4 +66,9 @@
   & hr + p {
     color: #90969e;
   }
+}
+
+.stop-scrolling {
+  height: 100%;
+  overflow: hidden;
 }

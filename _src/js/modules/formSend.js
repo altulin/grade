@@ -1,8 +1,10 @@
 import success from "./moduleSuccess";
+// eslint-disable-next-line import/no-cycle
 import { htmlInstance } from "./moduleConsultation";
+import err from "./moduleErr";
 
 export const form = document.querySelector(".consultation-form__inner");
-const preloader = document.querySelector(".preloader");
+export const preloader = document.querySelector(".preloader");
 // test url
 const url = "https://reqbin.com/echo/post/json";
 
@@ -41,12 +43,19 @@ const onSubmit = (event) => {
       preloader.classList.remove("preloader--visible");
       htmlInstance.close();
       form.reset();
+
       success.htmlInstanceSuccess.show(() => {
         success.successShowHandler();
       });
     })
     .catch(function () {
-      // console.log(err);
+      preloader.classList.remove("preloader--visible");
+      htmlInstance.close();
+      form.reset();
+
+      err.htmlInstanceErr.show(() => {
+        err.errShowHandler();
+      });
     });
 };
 

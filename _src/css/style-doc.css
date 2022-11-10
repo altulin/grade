@@ -172,10 +172,17 @@ button {
 }
 
 .doc {
+  background-color: #fff;
+  overflow-y: scroll;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.doc__wrapper {
+  background-color: #ffffff;
   padding-top: 50px;
-  margin-bottom: 100px;
-  font-family: "Gilroy", "Arial", sans-serif;
-  color: #7a838d;
+  padding-bottom: 80px;
 }
 
 .doc h1 {
@@ -232,6 +239,11 @@ button {
 
 .doc hr + p {
   color: #90969e;
+}
+
+.stop-scrolling {
+  height: 100%;
+  overflow: hidden;
 }
 
 @media screen and (max-width: 768px) {

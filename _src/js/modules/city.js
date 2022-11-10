@@ -3,7 +3,7 @@ import customSelect from "custom-select";
 import officesList from "./offices";
 // eslint-disable-next-line import/no-cycle
 import { changeValueGeo } from "./geo";
-// import { myMap, placemarkCollections } from "./map";
+import { myMap, placemarkCollections } from "./map";
 
 const selectCity = customSelect(".city__select")[0];
 const data = document.querySelector(".data");
@@ -51,13 +51,14 @@ const makeSelectCity = () => {
     })[0];
     changeValueCity(item);
     changeValueGeo(item);
-    // myMap
-    //   .setBounds(placemarkCollections[e.target.value].getBounds(), {
-    //     checkZoomRange: true,
-    //   })
-    //   .then(function () {
-    //     if (myMap.getZoom() > 15) myMap.setZoom(15); // Если значение zoom превышает 15, то устанавливаем 15.
-    //   });
+
+    myMap
+      .setBounds(placemarkCollections[officesList.indexOf(item)].getBounds(), {
+        checkZoomRange: true,
+      })
+      .then(function () {
+        if (myMap.getZoom() > 15) myMap.setZoom(15);
+      });
   });
 };
 

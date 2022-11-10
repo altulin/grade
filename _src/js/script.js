@@ -88,6 +88,124 @@
 /* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
+var require;var require;!function (e) {
+  if (true) module.exports = e();else {}
+}(function () {
+  return function e(n, t, o) {
+    function r(c, u) {
+      if (!t[c]) {
+        if (!n[c]) {
+          var s = "function" == typeof require && require;
+          if (!u && s) return require(c, !0);
+          if (i) return i(c, !0);
+          var a = new Error("Cannot find module '" + c + "'");
+          throw a.code = "MODULE_NOT_FOUND", a;
+        }
+
+        var l = t[c] = {
+          exports: {}
+        };
+        n[c][0].call(l.exports, function (e) {
+          return r(n[c][1][e] || e);
+        }, l, l.exports, e, n, t, o);
+      }
+
+      return t[c].exports;
+    }
+
+    for (var i = "function" == typeof require && require, c = 0; c < o.length; c++) r(o[c]);
+
+    return r;
+  }({
+    1: [function (e, n, t) {
+      "use strict";
+
+      Object.defineProperty(t, "__esModule", {
+        value: !0
+      }), t.create = t.visible = void 0;
+
+      var o = function (e) {
+        var n = arguments.length > 1 && void 0 !== arguments[1] && arguments[1],
+            t = document.createElement("div");
+        return t.innerHTML = e.trim(), !0 === n ? t.children : t.firstChild;
+      },
+          r = function (e, n) {
+        var t = e.children;
+        return 1 === t.length && t[0].tagName === n;
+      },
+          i = function (e) {
+        return null != (e = e || document.querySelector(".basicLightbox")) && !0 === e.ownerDocument.body.contains(e);
+      };
+
+      t.visible = i;
+
+      t.create = function (e, n) {
+        var t = function (e, n) {
+          var t = o('\n\t\t<div class="basicLightbox '.concat(n.className, '">\n\t\t\t<div class="basicLightbox__placeholder" role="dialog"></div>\n\t\t</div>\n\t')),
+              i = t.querySelector(".basicLightbox__placeholder");
+          e.forEach(function (e) {
+            return i.appendChild(e);
+          });
+          var c = r(i, "IMG"),
+              u = r(i, "VIDEO"),
+              s = r(i, "IFRAME");
+          return !0 === c && t.classList.add("basicLightbox--img"), !0 === u && t.classList.add("basicLightbox--video"), !0 === s && t.classList.add("basicLightbox--iframe"), t;
+        }(e = function (e) {
+          var n = "string" == typeof e,
+              t = e instanceof HTMLElement == 1;
+          if (!1 === n && !1 === t) throw new Error("Content must be a DOM element/node or string");
+          return !0 === n ? Array.from(o(e, !0)) : "TEMPLATE" === e.tagName ? [e.content.cloneNode(!0)] : Array.from(e.children);
+        }(e), n = function () {
+          var e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : {};
+          if (null == (e = Object.assign({}, e)).closable && (e.closable = !0), null == e.className && (e.className = ""), null == e.onShow && (e.onShow = function () {}), null == e.onClose && (e.onClose = function () {}), "boolean" != typeof e.closable) throw new Error("Property `closable` must be a boolean");
+          if ("string" != typeof e.className) throw new Error("Property `className` must be a string");
+          if ("function" != typeof e.onShow) throw new Error("Property `onShow` must be a function");
+          if ("function" != typeof e.onClose) throw new Error("Property `onClose` must be a function");
+          return e;
+        }(n)),
+            c = function (e) {
+          return !1 !== n.onClose(u) && function (e, n) {
+            return e.classList.remove("basicLightbox--visible"), setTimeout(function () {
+              return !1 === i(e) || e.parentElement.removeChild(e), n();
+            }, 410), !0;
+          }(t, function () {
+            if ("function" == typeof e) return e(u);
+          });
+        };
+
+        !0 === n.closable && t.addEventListener("click", function (e) {
+          e.target === t && c();
+        });
+        var u = {
+          element: function () {
+            return t;
+          },
+          visible: function () {
+            return i(t);
+          },
+          show: function (e) {
+            return !1 !== n.onShow(u) && function (e, n) {
+              return document.body.appendChild(e), setTimeout(function () {
+                requestAnimationFrame(function () {
+                  return e.classList.add("basicLightbox--visible"), n();
+                });
+              }, 10), !0;
+            }(t, function () {
+              if ("function" == typeof e) return e(u);
+            });
+          },
+          close: c
+        };
+        return u;
+      };
+    }, {}]
+  }, {}, [1])(1);
+});
+
+/***/ }),
+/* 1 */
+/***/ (function(module, exports, __webpack_require__) {
+
 "use strict";
 /**
  * Accordion v3.3.2
@@ -387,124 +505,6 @@
 
    true && void 0 !== module.exports ? module.exports = n : e.Accordion = n;
 }(window);
-
-/***/ }),
-/* 1 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var require;var require;!function (e) {
-  if (true) module.exports = e();else {}
-}(function () {
-  return function e(n, t, o) {
-    function r(c, u) {
-      if (!t[c]) {
-        if (!n[c]) {
-          var s = "function" == typeof require && require;
-          if (!u && s) return require(c, !0);
-          if (i) return i(c, !0);
-          var a = new Error("Cannot find module '" + c + "'");
-          throw a.code = "MODULE_NOT_FOUND", a;
-        }
-
-        var l = t[c] = {
-          exports: {}
-        };
-        n[c][0].call(l.exports, function (e) {
-          return r(n[c][1][e] || e);
-        }, l, l.exports, e, n, t, o);
-      }
-
-      return t[c].exports;
-    }
-
-    for (var i = "function" == typeof require && require, c = 0; c < o.length; c++) r(o[c]);
-
-    return r;
-  }({
-    1: [function (e, n, t) {
-      "use strict";
-
-      Object.defineProperty(t, "__esModule", {
-        value: !0
-      }), t.create = t.visible = void 0;
-
-      var o = function (e) {
-        var n = arguments.length > 1 && void 0 !== arguments[1] && arguments[1],
-            t = document.createElement("div");
-        return t.innerHTML = e.trim(), !0 === n ? t.children : t.firstChild;
-      },
-          r = function (e, n) {
-        var t = e.children;
-        return 1 === t.length && t[0].tagName === n;
-      },
-          i = function (e) {
-        return null != (e = e || document.querySelector(".basicLightbox")) && !0 === e.ownerDocument.body.contains(e);
-      };
-
-      t.visible = i;
-
-      t.create = function (e, n) {
-        var t = function (e, n) {
-          var t = o('\n\t\t<div class="basicLightbox '.concat(n.className, '">\n\t\t\t<div class="basicLightbox__placeholder" role="dialog"></div>\n\t\t</div>\n\t')),
-              i = t.querySelector(".basicLightbox__placeholder");
-          e.forEach(function (e) {
-            return i.appendChild(e);
-          });
-          var c = r(i, "IMG"),
-              u = r(i, "VIDEO"),
-              s = r(i, "IFRAME");
-          return !0 === c && t.classList.add("basicLightbox--img"), !0 === u && t.classList.add("basicLightbox--video"), !0 === s && t.classList.add("basicLightbox--iframe"), t;
-        }(e = function (e) {
-          var n = "string" == typeof e,
-              t = e instanceof HTMLElement == 1;
-          if (!1 === n && !1 === t) throw new Error("Content must be a DOM element/node or string");
-          return !0 === n ? Array.from(o(e, !0)) : "TEMPLATE" === e.tagName ? [e.content.cloneNode(!0)] : Array.from(e.children);
-        }(e), n = function () {
-          var e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : {};
-          if (null == (e = Object.assign({}, e)).closable && (e.closable = !0), null == e.className && (e.className = ""), null == e.onShow && (e.onShow = function () {}), null == e.onClose && (e.onClose = function () {}), "boolean" != typeof e.closable) throw new Error("Property `closable` must be a boolean");
-          if ("string" != typeof e.className) throw new Error("Property `className` must be a string");
-          if ("function" != typeof e.onShow) throw new Error("Property `onShow` must be a function");
-          if ("function" != typeof e.onClose) throw new Error("Property `onClose` must be a function");
-          return e;
-        }(n)),
-            c = function (e) {
-          return !1 !== n.onClose(u) && function (e, n) {
-            return e.classList.remove("basicLightbox--visible"), setTimeout(function () {
-              return !1 === i(e) || e.parentElement.removeChild(e), n();
-            }, 410), !0;
-          }(t, function () {
-            if ("function" == typeof e) return e(u);
-          });
-        };
-
-        !0 === n.closable && t.addEventListener("click", function (e) {
-          e.target === t && c();
-        });
-        var u = {
-          element: function () {
-            return t;
-          },
-          visible: function () {
-            return i(t);
-          },
-          show: function (e) {
-            return !1 !== n.onShow(u) && function (e, n) {
-              return document.body.appendChild(e), setTimeout(function () {
-                requestAnimationFrame(function () {
-                  return e.classList.add("basicLightbox--visible"), n();
-                });
-              }, 10), !0;
-            }(t, function () {
-              if ("function" == typeof e) return e(u);
-            });
-          },
-          close: c
-        };
-        return u;
-      };
-    }, {}]
-  }, {}, [1])(1);
-});
 
 /***/ }),
 /* 2 */
@@ -4567,7 +4567,7 @@ var tabby_min = __webpack_require__(5);
 var tabby_min_default = /*#__PURE__*/__webpack_require__.n(tabby_min);
 
 // EXTERNAL MODULE: ./node_modules/accordion-js/dist/accordion.min.js
-var accordion_min = __webpack_require__(0);
+var accordion_min = __webpack_require__(1);
 var accordion_min_default = /*#__PURE__*/__webpack_require__.n(accordion_min);
 
 // CONCATENATED MODULE: ./node_modules/ssr-window/ssr-window.esm.js
@@ -17263,7 +17263,7 @@ var glightbox_min = __webpack_require__(7);
 var glightbox_min_default = /*#__PURE__*/__webpack_require__.n(glightbox_min);
 
 // EXTERNAL MODULE: ./node_modules/basiclightbox/dist/basicLightbox.min.js
-var basicLightbox_min = __webpack_require__(1);
+var basicLightbox_min = __webpack_require__(0);
 
 // CONCATENATED MODULE: ./node_modules/imask/esm/_rollupPluginBabelHelpers-67bba7fb.js
 function _typeof(obj) {
@@ -22090,7 +22090,41 @@ var successShowHandler = function successShowHandler() {
   htmlInstanceSuccess: htmlInstanceSuccess,
   successShowHandler: successShowHandler
 });
+// CONCATENATED MODULE: ./_src/js/modules/moduleErr.js
+
+var htmlInstanceErr = basicLightbox_min["create"](document.querySelector(".err"));
+
+var moduleErr_escapeHandler = function escapeHandler(e) {
+  if (e.key === "Escape" && htmlInstanceErr.visible()) {
+    document.removeEventListener("keydown", escapeHandler); // eslint-disable-next-line no-use-before-define
+
+    moduleErr_closeForm();
+  }
+};
+
+var moduleErr_closeForm = function closeForm() {
+  htmlInstanceErr.close();
+};
+
+var moduleErr_closeHandler = function closeHandler(e) {
+  e.preventDefault();
+  moduleErr_closeForm();
+};
+
+var errShowHandler = function errShowHandler() {
+  var btnClose = document.querySelector(".err__close"); // console.log(btnClose);
+
+  btnClose.addEventListener("click", moduleErr_closeHandler);
+  document.addEventListener("keydown", moduleErr_escapeHandler);
+};
+
+/* harmony default export */ var moduleErr = ({
+  errShowHandler: errShowHandler,
+  htmlInstanceErr: htmlInstanceErr
+});
 // CONCATENATED MODULE: ./_src/js/modules/formSend.js
+ // eslint-disable-next-line import/no-cycle
+
 
 
 var formSend_form = document.querySelector(".consultation-form__inner");
@@ -22132,7 +22166,13 @@ var formSend_onSubmit = function onSubmit(event) {
     moduleSuccess.htmlInstanceSuccess.show(function () {
       moduleSuccess.successShowHandler();
     });
-  })["catch"](function () {// console.log(err);
+  })["catch"](function () {
+    preloader.classList.remove("preloader--visible");
+    htmlInstance.close();
+    formSend_form.reset();
+    moduleErr.htmlInstanceErr.show(function () {
+      moduleErr.errShowHandler();
+    });
   });
 };
 
@@ -22440,6 +22480,10 @@ var faqAccordion_createAccordionFaq = function createAccordionFaq() {
 };
 
 /* harmony default export */ var faqAccordion = (faqAccordion_createAccordionFaq);
+// EXTERNAL MODULE: ./node_modules/custom-select/build/index.js
+var build = __webpack_require__(2);
+var build_default = /*#__PURE__*/__webpack_require__.n(build);
+
 // CONCATENATED MODULE: ./_src/js/modules/offices.js
 // Список городов и офисов в них
 var officesList = [{
@@ -22482,11 +22526,14 @@ var officesList = [{
 
 /* eslint-disable no-undef */
 
-var winWidth = window.innerWidth;
+var winWidth = window.innerWidth; // eslint-disable-next-line import/no-mutable-exports
+
+var myMap; // eslint-disable-next-line import/no-mutable-exports
+
+var placemarkCollections;
 
 var map_getMap = function getMap() {
-  var myMap;
-  var placemarkCollections = {};
+  placemarkCollections = {};
   var placemarkList = {}; // Список городов и офисов в них
   // eslint-disable-next-line no-use-before-define
 
@@ -22554,10 +22601,6 @@ var map_getMap = function getMap() {
 };
 
 /* harmony default export */ var map = (map_getMap);
-// EXTERNAL MODULE: ./node_modules/custom-select/build/index.js
-var build = __webpack_require__(2);
-var build_default = /*#__PURE__*/__webpack_require__.n(build);
-
 // CONCATENATED MODULE: ./_src/js/modules/city.js
 function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = city_unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
 
@@ -22569,7 +22612,7 @@ function city_arrayLikeToArray(arr, len) { if (len == null || len > arr.length) 
 
  // eslint-disable-next-line import/no-cycle
 
- // import { myMap, placemarkCollections } from "./map";
+
 
 var selectCity = build_default()(".city__select")[0];
 var city_data = document.querySelector(".data"); // const itemAddr = data.querySelector(".data__item--addr");
@@ -22635,13 +22678,12 @@ var city_makeSelectCity = function makeSelectCity() {
       return elem.value === e.target.value;
     })[0];
     changeValueCity(item);
-    changeValueGeo(item); // myMap
-    //   .setBounds(placemarkCollections[e.target.value].getBounds(), {
-    //     checkZoomRange: true,
-    //   })
-    //   .then(function () {
-    //     if (myMap.getZoom() > 15) myMap.setZoom(15); // Если значение zoom превышает 15, то устанавливаем 15.
-    //   });
+    changeValueGeo(item);
+    myMap.setBounds(placemarkCollections[offices.indexOf(item)].getBounds(), {
+      checkZoomRange: true
+    }).then(function () {
+      if (myMap.getZoom() > 15) myMap.setZoom(15);
+    });
   });
 };
 
@@ -22655,6 +22697,7 @@ function geo_arrayLikeToArray(arr, len) { if (len == null || len > arr.length) l
 
 
  // eslint-disable-next-line import/no-cycle
+
 
 
 var linkTel = document.querySelector(".icon-box__link--consultation");
@@ -22695,6 +22738,11 @@ var geo_makeSelectGeo = function makeSelectGeo() {
     })[0];
     changeValueGeo(item);
     changeValueCity(item);
+    myMap.setBounds(placemarkCollections[offices.indexOf(item)].getBounds(), {
+      checkZoomRange: true
+    }).then(function () {
+      if (myMap.getZoom() > 15) myMap.setZoom(15);
+    });
   });
 };
 
@@ -22744,6 +22792,67 @@ var processSlider_getProcessSlider = function getProcessSlider() {
 };
 
 /* harmony default export */ var processSlider = (processSlider_getProcessSlider);
+// CONCATENATED MODULE: ./_src/js/modules/actualYear.js
+/**
+ * Модуль "Актуальный год"
+ */
+var actualYear = function actualYear() {
+  var year = new Date().getFullYear();
+
+  if (document.querySelector("[data-actual-year]")) {
+    document.querySelector("[data-actual-year]").textContent = year;
+  }
+};
+
+/* harmony default export */ var modules_actualYear = (actualYear);
+// CONCATENATED MODULE: ./_src/js/modules/moduleDoc.js
+
+var moduleDoc_body = document.querySelector(".page-body");
+var htmlInstanceDoc = basicLightbox_min["create"](document.querySelector(".doc__modal"), {
+  className: "doc",
+  onShow: function onShow() {
+    moduleDoc_body.classList.add("stop-scrolling");
+  },
+  onClose: function onClose() {
+    moduleDoc_body.classList.remove("stop-scrolling");
+  }
+});
+
+var moduleDoc_closeForm = function closeForm() {
+  htmlInstanceDoc.close();
+};
+
+var moduleDoc_escapeHandler = function escapeHandler(e) {
+  if (e.key === "Escape" && htmlInstanceDoc.visible()) {
+    document.removeEventListener("keydown", escapeHandler);
+    moduleDoc_closeForm();
+  }
+};
+
+var moduleDoc_closeHandler = function closeHandler(e) {
+  e.preventDefault();
+  moduleDoc_closeForm();
+};
+
+var docShowHandler = function docShowHandler() {
+  var btnClose = document.querySelector(".doc__close");
+  btnClose.addEventListener("click", moduleDoc_closeHandler);
+  document.addEventListener("keydown", moduleDoc_escapeHandler);
+};
+
+var politikHandle = function politikHandle(e) {
+  e.preventDefault();
+  htmlInstanceDoc.show(function () {
+    docShowHandler();
+  });
+};
+
+var politikListener = function politikListener() {
+  var btnPlitik = document.querySelector(".main-footer__politic");
+  if (btnPlitik) btnPlitik.addEventListener("click", politikHandle);
+};
+
+/* harmony default export */ var moduleDoc = (politikListener);
 // CONCATENATED MODULE: ./_src/js/main.js
 /* eslint-disable object-shorthand */
 
@@ -22754,6 +22863,7 @@ var processSlider_getProcessSlider = function getProcessSlider() {
 /* eslint-disable new-cap */
 
 /* eslint-disable no-unused-vars */
+
 
 
 
@@ -22894,6 +23004,8 @@ window.addEventListener("DOMContentLoaded", function () {
   faqAccordion();
   city();
   map();
+  modules_actualYear();
+  moduleDoc();
 });
 
 /***/ })

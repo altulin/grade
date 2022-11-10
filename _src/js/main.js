@@ -13,12 +13,13 @@ import GLightbox from "glightbox";
 import makeListenerConsult from "./modules/moduleConsultation";
 import createlawSlider from "./modules/lawSlider";
 import createAccordionFaq from "./modules/faqAccordion";
-import getMap from "./modules/map";
 import makeSelectGeo from "./modules/geo";
 import makeSelectCity from "./modules/city";
-import { winWidth } from "./modules/map";
+import getMap, { winWidth } from "./modules/map";
 import makeAncor from "./modules/anchor";
 import getProcessSlider from "./modules/processSlider";
+import actualYear from "./modules/actualYear";
+import politikListener from "./modules/moduleDoc";
 
 const nav = ".nav";
 const tablet = winWidth < 769;
@@ -128,4 +129,6 @@ window.addEventListener("DOMContentLoaded", function () {
   createAccordionFaq();
   makeSelectCity();
   getMap();
+  actualYear();
+  politikListener();
 });
