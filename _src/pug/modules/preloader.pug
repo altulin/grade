@@ -1,6 +1,9 @@
 section.preloader
 	.preloader__lds.lds-ring
-		<div></div>
-		<div></div>
-		<div></div>
-		<div></div>
+		//- <div></div>
+		//- <div></div>
+		//- <div></div>
+		//- <div></div>
+		.spinner.center
+			- for (var i = 0; i < 12; ++i)
+				.spinner-blade

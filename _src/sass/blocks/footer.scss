@@ -8,18 +8,31 @@
     justify-content: space-between;
     align-items: center;
     padding-bottom: 20px;
+
+    @include mw($ph) {
+      flex-direction: column;
+    }
   }
 
   &__copy {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+
+    @include mw($ph) {
+      margin-bottom: 15px;
+    }
   }
 
   &__logo {
     width: 53px;
     height: 53px;
     display: block;
+
+    @include mw($ph) {
+      order: -1;
+      margin-bottom: 15px;
+    }
 
     & svg {
       fill: #ff794c;

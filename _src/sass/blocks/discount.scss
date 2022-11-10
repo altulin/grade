@@ -7,12 +7,12 @@
 
   &__title {
     @include margin-bottom(80px);
-
-    span {
-      color: #ff794c;
-    }
   }
 
   &__quick-wrap {
   }
+}
+
+.orange {
+  color: #ff794c;
 }

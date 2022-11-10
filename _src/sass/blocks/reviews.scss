@@ -1,0 +1,11 @@
+.reviews {
+  @include padding-top(180px);
+  &__app {
+  }
+  &__inner {
+  }
+
+  &__title {
+    @include margin-bottom(80px);
+  }
+}
