@@ -21,7 +21,6 @@ import actualYear from "./modules/actualYear";
 import politikListener from "./modules/moduleDoc";
 import officesList from "./modules/offices";
 import changeCity from "./modules/changeCity";
-import addEventResize from "./modules/resize";
 
 const nav = ".nav";
 
@@ -98,5 +97,4 @@ window.addEventListener("DOMContentLoaded", function () {
   getMap();
   actualYear();
   politikListener();
-  addEventResize();
 });

@@ -16607,9 +16607,14 @@ var map_getMap = function getMap() {
 // CONCATENATED MODULE: ./_src/js/modules/changeCity.js
 var changeCity = function changeCity(val) {
   var elem = document.querySelector(".promo__city");
+  var elemNav = document.querySelector(".nav__city");
 
   if (elem) {
     elem.textContent = val;
+  }
+
+  if (elemNav) {
+    elemNav.textContent = val;
   }
 };
 
@@ -16867,28 +16872,6 @@ var politikListener = function politikListener() {
 };
 
 /* harmony default export */ var moduleDoc = (politikListener);
-// CONCATENATED MODULE: ./_src/js/modules/resize.js
-var resizeTimeout;
-
-var actualResizeHandler = function actualResizeHandler() {
-  // eslint-disable-next-line no-restricted-globals
-  location.reload();
-};
-
-var resizeThrottler = function resizeThrottler() {
-  if (!resizeTimeout) {
-    resizeTimeout = setTimeout(function () {
-      resizeTimeout = null;
-      actualResizeHandler();
-    }, 2000);
-  }
-};
-
-var addEventResize = function addEventResize() {
-  return window.addEventListener("resize", resizeThrottler, false);
-};
-
-/* harmony default export */ var modules_resize = (addEventResize);
 // CONCATENATED MODULE: ./_src/js/main.js
 /* eslint-disable object-shorthand */
 
@@ -16899,7 +16882,6 @@ var addEventResize = function addEventResize() {
 /* eslint-disable new-cap */
 
 /* eslint-disable no-unused-vars */
-
 
 
 
@@ -16994,7 +16976,6 @@ window.addEventListener("DOMContentLoaded", function () {
   map();
   modules_actualYear();
   moduleDoc();
-  modules_resize();
 });
 
 /***/ })
