@@ -1,9 +1,11 @@
-import renderHover from "./hover";
+// import renderHover from "./hover";
+// import getProcessSlider from "./processSlider";
 
 let resizeTimeout;
 
 const actualResizeHandler = () => {
-  renderHover();
+  // eslint-disable-next-line no-restricted-globals
+  location.reload();
 };
 
 const resizeThrottler = () => {
@@ -11,7 +13,7 @@ const resizeThrottler = () => {
     resizeTimeout = setTimeout(function () {
       resizeTimeout = null;
       actualResizeHandler();
-    }, 1000);
+    }, 2000);
   }
 };
 

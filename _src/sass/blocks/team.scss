@@ -233,6 +233,7 @@
   max-width: 930px;
   margin-left: 2.5%;
   margin-right: auto;
+  align-self: stretch;
 
   @include mw($tb) {
     margin-left: 16px;
@@ -357,6 +358,7 @@
     @include mw($tb) {
       align-items: flex-start;
       position: relative;
+      // padding-top: 32px;
 
       & .swiper-pagination {
         text-align: right;
@@ -376,8 +378,17 @@
     margin-bottom: 24px;
 
     @include mw($tb) {
-      margin-bottom: 16px;
       position: absolute;
+      // margin-bottom: 16px;
+      top: 0;
+      z-index: 2;
+    }
+
+    @media screen and (max-width: 400px) {
+      position: relative;
+      margin-bottom: 16px;
+      margin-left: auto;
+      margin-right: auto;
     }
   }
 
@@ -388,7 +399,7 @@
 
     @include mw($tb) {
       padding-bottom: 0;
-      padding-top: 40px;
+      padding-top: 40px !important;
     }
   }
 
@@ -568,6 +579,15 @@
   margin: 0 2px;
 }
 
-.swiper-pagination-bullet-active {
+.diploma__bullet {
+  width: 8px;
+  height: 8px;
+  display: inline-block;
+  border-radius: 50%;
+  background-color: #20262f;
+  margin: 0 2px;
+}
+
+.diploma__bullet--active {
   background-color: #ef7d00;
 }

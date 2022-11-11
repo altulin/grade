@@ -22488,6 +22488,7 @@ var build_default = /*#__PURE__*/__webpack_require__.n(build);
 // Список городов и офисов в них
 var officesList = [{
   cityName: "Красноярск",
+  "in": "Красноярске",
   tel: "8 3912 347778",
   link: "+73912347778",
   value: "krasnoyarsk",
@@ -22501,6 +22502,7 @@ var officesList = [{
   }]
 }, {
   cityName: "Иркутск",
+  "in": "Иркутске",
   tel: "8 3952 435001",
   link: "+73952435001",
   value: "irkutsk",
@@ -22511,6 +22513,7 @@ var officesList = [{
   }]
 }, {
   cityName: "Братск",
+  "in": "Братске",
   tel: "8 9025 432294",
   link: "+79025432294",
   value: "bratsk",
@@ -22558,7 +22561,7 @@ var map_getMap = function getMap() {
           balloonContent: shopInfo.name
         }, {
           iconLayout: "default#image",
-          iconImageHref: "./img/marker.png",
+          iconImageHref: "./img/svg/marker.svg",
           iconImageSize: winWidth > 601 ? [48, 60] : [27, 34]
         });
         if (!placemarkList[i]) placemarkList[i] = {};
@@ -22601,6 +22604,16 @@ var map_getMap = function getMap() {
 };
 
 /* harmony default export */ var map = (map_getMap);
+// CONCATENATED MODULE: ./_src/js/modules/changeCity.js
+var changeCity = function changeCity(val) {
+  var elem = document.querySelector(".promo__city");
+
+  if (elem) {
+    elem.textContent = val;
+  }
+};
+
+/* harmony default export */ var modules_changeCity = (changeCity);
 // CONCATENATED MODULE: ./_src/js/modules/city.js
 function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = city_unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
 
@@ -22614,11 +22627,9 @@ function city_arrayLikeToArray(arr, len) { if (len == null || len > arr.length) 
 
 
 
-var selectCity = build_default()(".city__select")[0];
-var city_data = document.querySelector(".data"); // const itemAddr = data.querySelector(".data__item--addr");
-// const linkTel = data.querySelector(".data__link--tel");
-// const linkMail = data.querySelector(".data__link--mail");
 
+var selectCity = build_default()(".city__select")[0];
+var city_data = document.querySelector(".data");
 var changeValueCity = function changeValueCity(elem) {
   if (city_data) {
     var itemAddr = city_data.querySelector(".data__item--addr");
@@ -22677,6 +22688,7 @@ var city_makeSelectCity = function makeSelectCity() {
     var item = offices.filter(function (elem) {
       return elem.value === e.target.value;
     })[0];
+    modules_changeCity(item["in"]);
     changeValueCity(item);
     changeValueGeo(item);
     myMap.setBounds(placemarkCollections[offices.indexOf(item)].getBounds(), {
@@ -22697,6 +22709,7 @@ function geo_arrayLikeToArray(arr, len) { if (len == null || len > arr.length) l
 
 
  // eslint-disable-next-line import/no-cycle
+
 
 
 
@@ -22738,6 +22751,7 @@ var geo_makeSelectGeo = function makeSelectGeo() {
     })[0];
     changeValueGeo(item);
     changeValueCity(item);
+    modules_changeCity(item["in"]);
     myMap.setBounds(placemarkCollections[offices.indexOf(item)].getBounds(), {
       checkZoomRange: true
     }).then(function () {
@@ -22778,7 +22792,7 @@ var makeAncor = function makeAncor() {
 
 var processSlider_getProcessSlider = function getProcessSlider() {
   if (winWidth < 769) {
-    core_class.use([navigation, pagination]);
+    core_class.use([pagination]);
     var swiper = new core_class(".process__swiper", {
       cssMode: true,
       spaceBetween: 30,
@@ -22853,6 +22867,30 @@ var politikListener = function politikListener() {
 };
 
 /* harmony default export */ var moduleDoc = (politikListener);
+// CONCATENATED MODULE: ./_src/js/modules/resize.js
+// import renderHover from "./hover";
+// import getProcessSlider from "./processSlider";
+var resizeTimeout;
+
+var actualResizeHandler = function actualResizeHandler() {
+  // eslint-disable-next-line no-restricted-globals
+  location.reload();
+};
+
+var resizeThrottler = function resizeThrottler() {
+  if (!resizeTimeout) {
+    resizeTimeout = setTimeout(function () {
+      resizeTimeout = null;
+      actualResizeHandler();
+    }, 2000);
+  }
+};
+
+var addEventResize = function addEventResize() {
+  return window.addEventListener("resize", resizeThrottler, false);
+};
+
+/* harmony default export */ var modules_resize = (addEventResize);
 // CONCATENATED MODULE: ./_src/js/main.js
 /* eslint-disable object-shorthand */
 
@@ -22863,6 +22901,9 @@ var politikListener = function politikListener() {
 /* eslint-disable new-cap */
 
 /* eslint-disable no-unused-vars */
+
+
+
 
 
 
@@ -22907,7 +22948,9 @@ var main_createSliders = function createSliders() {
   var swiper = new core_class(".diploma__swiper", {
     pagination: {
       el: ".swiper-pagination",
-      type: "bullets"
+      type: "bullets",
+      bulletClass: "diploma__bullet",
+      bulletActiveClass: "diploma__bullet--active"
     },
     breakpoints: {
       769: {
@@ -22935,11 +22978,11 @@ var main_createAnimation = function createAnimation(unit) {
   }).to(img, {
     width: !tablet ? "38%" : imgWidth,
     ease: "none",
-    duration: 0.3
+    duration: 0.5
   }).to(button, {
     padding: 0,
     duration: 0.3
-  }, "<").to(box, {
+  }).to(box, {
     opacity: 1,
     duration: !tablet ? 0.5 : 0
   }).to(diploma, {
@@ -22991,6 +23034,7 @@ var main_createLightbox = function createLightbox() {
 
 main_createMobileMenu();
 window.addEventListener("DOMContentLoaded", function () {
+  modules_changeCity(offices[0]["in"]);
   modules_anchor();
   main_createStickyHeader();
   main_createTabs();
@@ -23006,6 +23050,7 @@ window.addEventListener("DOMContentLoaded", function () {
   map();
   modules_actualYear();
   moduleDoc();
+  modules_resize();
 });
 
 /***/ })

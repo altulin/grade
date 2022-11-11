@@ -4,12 +4,10 @@ import officesList from "./offices";
 // eslint-disable-next-line import/no-cycle
 import { changeValueGeo } from "./geo";
 import { myMap, placemarkCollections } from "./map";
+import changeCity from "./changeCity";
 
 const selectCity = customSelect(".city__select")[0];
 const data = document.querySelector(".data");
-// const itemAddr = data.querySelector(".data__item--addr");
-// const linkTel = data.querySelector(".data__link--tel");
-// const linkMail = data.querySelector(".data__link--mail");
 
 export const changeValueCity = (elem) => {
   if (data) {
@@ -49,6 +47,7 @@ const makeSelectCity = () => {
     const item = officesList.filter((elem) => {
       return elem.value === e.target.value;
     })[0];
+    changeCity(item.in);
     changeValueCity(item);
     changeValueGeo(item);
 

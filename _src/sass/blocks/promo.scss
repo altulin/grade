@@ -75,7 +75,7 @@
     }
 
     @include mw($dt) {
-      padding-top: 58%;
+      padding-top: 75%;
     }
   }
 
@@ -84,7 +84,11 @@
     height: 100%;
     display: block;
     object-fit: cover;
-    object-position: center top;
+    object-position: top;
+
+    @include mw($dt) {
+      object-position: center;
+    }
 
     @media screen and (max-width: 1920px) {
       position: absolute;

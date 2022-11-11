@@ -7,25 +7,25 @@ section.services(id=`${nav[0].link}`)
 						<a class="tabs__link tabs-link tabs-link--grade" data-tabby-default href="#grade">
 							<figure class="tabs-link__icon tabs-link__icon--grade"></figure>
 							<span class="tabs-link__text">Оценка</span>
-							<sup class="tabs-link__num">(8)</sup>
+							//- <sup class="tabs-link__num">(8)</sup>
 						</a>
 					li.tabs__item
 						a.tabs__link.tabs-link.tabs-link--expertise(href="#expertise")
 							figure.tabs-link__icon.tabs-link__icon--expertise
 							span.tabs-link__text Экспертизы
-							sup.tabs-link__num (11)
+							//- sup.tabs-link__num (11)
 
 				.tabs__block
 					ul.tabs__content.grade#grade.skill
 						each val in skill
 							li.skill__item
-								a.skill__link
+								a.skill__link.consultation-btn(href="#")
 									span.skill__text= `Оценка ${val.text}`
 									span.skill__price= val.price
 					ul.tabs__content.expertise#expertise.skill
 						each val in exp
 							li.skill__item
-								a.skill__link
+								a.skill__link.consultation-btn(href="#")
 									span.skill__text= `${val.text}`
 									span.skill__price= val.price
 		.services__tabs-info-inner.container

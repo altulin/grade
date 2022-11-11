@@ -1,10 +1,10 @@
 /* eslint-disable no-unused-vars */
-import Swiper, { Navigation, Pagination } from "swiper";
+import Swiper, { Pagination } from "swiper";
 import { winWidth } from "./map";
 
 const getProcessSlider = () => {
   if (winWidth < 769) {
-    Swiper.use([Navigation, Pagination]);
+    Swiper.use([Pagination]);
     const swiper = new Swiper(".process__swiper", {
       cssMode: true,
       spaceBetween: 30,

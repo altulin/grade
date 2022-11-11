@@ -9,7 +9,7 @@ const mode = pluginsObject.minimist(process.argv.slice(2))._[0];
 const assemblyWebpack = true; // webpack true or false
 const assemblyBabel = false; // babel true or false
 
-const cssFileList = ["", "-doc"];
+const cssFileList = [""];
 
 const plugunsJsUsed = [
   // `jquery_js`,
@@ -52,7 +52,7 @@ const plugunsCssUsed = [
     // `glightbox_css`,
     // `swiper_css`,
     // `myCssLibs`,
-    `myCssFileDoc`,
+    // `myCssFileDoc`,
   ],
 ];
 

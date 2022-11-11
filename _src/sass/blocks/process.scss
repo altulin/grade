@@ -15,10 +15,12 @@
     display: flex;
     justify-content: space-between;
     width: 100%;
-    box-sizing: inherit;
+
+    &.swiper-wrapper {
+      box-sizing: border-box;
+    }
 
     @include mw($tb) {
-      // box-sizing: content-box;
       margin-bottom: 20px;
     }
   }

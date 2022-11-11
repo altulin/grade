@@ -8,4 +8,8 @@
   &__title {
     @include margin-bottom(80px);
   }
+
+  & .sw-app {
+    width: auto !important;
+  }
 }

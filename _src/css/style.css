@@ -3043,8 +3043,8 @@ iframe.wait-autoplay {
   display: block;
   -o-object-fit: cover;
      object-fit: cover;
-  -o-object-position: center top;
-     object-position: center top;
+  -o-object-position: top;
+     object-position: top;
 }
 
 .services {
@@ -3215,6 +3215,7 @@ iframe.wait-autoplay {
   -webkit-transition: 0.3s;
   -o-transition: 0.3s;
   transition: 0.3s;
+  color: #20262f;
 }
 
 .skill__price {
@@ -3458,8 +3459,11 @@ iframe.wait-autoplay {
       -ms-flex-pack: justify;
           justify-content: space-between;
   width: 100%;
-  -webkit-box-sizing: inherit;
-          box-sizing: inherit;
+}
+
+.process__list.swiper-wrapper {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .process__pagination {
@@ -3749,6 +3753,9 @@ iframe.wait-autoplay {
   max-width: 930px;
   margin-left: 2.5%;
   margin-right: auto;
+  -ms-flex-item-align: stretch;
+      -ms-grid-row-align: stretch;
+      align-self: stretch;
 }
 
 .unit-box__left {
@@ -4057,7 +4064,16 @@ iframe.wait-autoplay {
   margin: 0 2px;
 }
 
-.swiper-pagination-bullet-active {
+.diploma__bullet {
+  width: 8px;
+  height: 8px;
+  display: inline-block;
+  border-radius: 50%;
+  background-color: #20262f;
+  margin: 0 2px;
+}
+
+.diploma__bullet--active {
   background-color: #ef7d00;
 }
 
@@ -4515,7 +4531,7 @@ iframe.wait-autoplay {
 .pagination__bullet {
   border-radius: 50px;
   height: 4px;
-  width: calc((100% / 7) - 2px);
+  width: calc((100% / 6) - 3px);
   background-color: #d2d4d5;
   -webkit-transition: 0.3s;
   -o-transition: 0.3s;
@@ -4538,6 +4554,10 @@ iframe.wait-autoplay {
 
 .reviews__title {
   margin-bottom: calc(1.625rem + 4.5vw);
+}
+
+.reviews .sw-app {
+  width: auto !important;
 }
 
 .faq {
@@ -5682,7 +5702,12 @@ iframe.wait-autoplay {
 
 @media screen and (max-width: 1200px) {
   .promo__img-wrap {
-    padding-top: 58%;
+    padding-top: 75%;
+  }
+
+  .promo__img {
+    -o-object-position: center;
+       object-position: center;
   }
 
   .services__tabs-info-inner {
@@ -6184,13 +6209,14 @@ iframe.wait-autoplay {
   }
 
   .diploma__titile {
-    margin-bottom: 16px;
     position: absolute;
+    top: 0;
+    z-index: 2;
   }
 
   .diploma__swiper {
     padding-bottom: 0;
-    padding-top: 40px;
+    padding-top: 40px !important;
   }
 
   [aria-expanded="true"] {
@@ -6701,6 +6727,9 @@ iframe.wait-autoplay {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
   }
 
   .main-footer__copy {
@@ -6712,6 +6741,15 @@ iframe.wait-autoplay {
         -ms-flex-order: -1;
             order: -1;
     margin-bottom: 15px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .diploma__titile {
+    position: relative;
+    margin-bottom: 16px;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 

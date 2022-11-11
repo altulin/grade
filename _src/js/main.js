@@ -20,6 +20,9 @@ import makeAncor from "./modules/anchor";
 import getProcessSlider from "./modules/processSlider";
 import actualYear from "./modules/actualYear";
 import politikListener from "./modules/moduleDoc";
+import officesList from "./modules/offices";
+import changeCity from "./modules/changeCity";
+import addEventResize from "./modules/resize";
 
 const nav = ".nav";
 const tablet = winWidth < 769;
@@ -49,6 +52,8 @@ const createSliders = () => {
     pagination: {
       el: ".swiper-pagination",
       type: "bullets",
+      bulletClass: "diploma__bullet",
+      bulletActiveClass: "diploma__bullet--active",
     },
     breakpoints: {
       769: { cssMode: false },
@@ -67,8 +72,8 @@ const createAnimation = (unit) => {
   timeline
     .to(box, { opacity: !tablet ? 0 : 1, duration: 0 })
     .to(button, { backgroundColor: "transparent", duration: 0 })
-    .to(img, { width: !tablet ? "38%" : imgWidth, ease: "none", duration: 0.3 })
-    .to(button, { padding: 0, duration: 0.3 }, "<")
+    .to(img, { width: !tablet ? "38%" : imgWidth, ease: "none", duration: 0.5 })
+    .to(button, { padding: 0, duration: 0.3 })
     .to(box, { opacity: 1, duration: !tablet ? 0.5 : 0 })
     .to(diploma, { autoAlpha: 1, position: "relative", duration: 0.5 }, "<");
 };
@@ -116,6 +121,7 @@ const createLightbox = () => {
 createMobileMenu();
 
 window.addEventListener("DOMContentLoaded", function () {
+  changeCity(officesList[0].in);
   makeAncor();
   createStickyHeader();
   createTabs();
@@ -131,4 +137,5 @@ window.addEventListener("DOMContentLoaded", function () {
   getMap();
   actualYear();
   politikListener();
+  addEventResize();
 });

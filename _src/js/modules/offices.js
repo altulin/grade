@@ -2,6 +2,7 @@
 const officesList = [
   {
     cityName: "Красноярск",
+    in: "Красноярске",
     tel: "8 3912 347778",
     link: "+73912347778",
     value: "krasnoyarsk",
@@ -19,6 +20,7 @@ const officesList = [
   },
   {
     cityName: "Иркутск",
+    in: "Иркутске",
     tel: "8 3952 435001",
     link: "+73952435001",
     value: "irkutsk",
@@ -32,6 +34,7 @@ const officesList = [
   },
   {
     cityName: "Братск",
+    in: "Братске",
     tel: "8 9025 432294",
     link: "+79025432294",
     value: "bratsk",

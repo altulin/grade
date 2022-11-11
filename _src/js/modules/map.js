@@ -40,7 +40,7 @@ const getMap = () => {
           },
           {
             iconLayout: "default#image",
-            iconImageHref: "./img/marker.png",
+            iconImageHref: "./img/svg/marker.svg",
             iconImageSize: winWidth > 601 ? [48, 60] : [27, 34],
           }
         );

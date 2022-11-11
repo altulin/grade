@@ -3,6 +3,7 @@ import officesList from "./offices";
 // eslint-disable-next-line import/no-cycle
 import { changeValueCity } from "./city";
 import { myMap, placemarkCollections } from "./map";
+import changeCity from "./changeCity";
 
 const linkTel = document.querySelector(".icon-box__link--consultation");
 const selectGeo = customSelect(".geo__select")[0];
@@ -33,6 +34,7 @@ const makeSelectGeo = () => {
     })[0];
     changeValueGeo(item);
     changeValueCity(item);
+    changeCity(item.in);
 
     myMap
       .setBounds(placemarkCollections[officesList.indexOf(item)].getBounds(), {
