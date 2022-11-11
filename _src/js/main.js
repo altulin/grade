@@ -8,7 +8,6 @@ import Tabby from "tabbyjs";
 import Accordion from "accordion-js";
 import Swiper, { Pagination } from "swiper";
 import HcOffcanvasNav from "hc-offcanvas-nav";
-import { gsap } from "gsap";
 import GLightbox from "glightbox";
 import makeListenerConsult from "./modules/moduleConsultation";
 import createlawSlider from "./modules/lawSlider";
@@ -25,8 +24,6 @@ import changeCity from "./modules/changeCity";
 import addEventResize from "./modules/resize";
 
 const nav = ".nav";
-const tablet = winWidth < 769;
-const imgWidth = winWidth < 600 ? "80px" : "109px";
 
 const createMobileMenu = () => {
   document.addEventListener("DOMContentLoaded", function () {
@@ -62,49 +59,13 @@ const createSliders = () => {
   });
 };
 
-const createAnimation = (unit) => {
-  const button = unit.querySelectorAll("button");
-  const img = unit.querySelectorAll(".unit__img-wrap");
-  const box = unit.querySelector(".unit-box");
-  const diploma = unit.querySelector(".diploma");
-  const timeline = gsap.timeline();
-
-  timeline
-    .to(box, { opacity: !tablet ? 0 : 1, duration: 0 })
-    .to(button, { backgroundColor: "transparent", duration: 0 })
-    .to(img, { width: !tablet ? "38%" : imgWidth, ease: "none", duration: 0.5 })
-    .to(button, { padding: 0, duration: 0.3 })
-    .to(box, { opacity: 1, duration: !tablet ? 0.5 : 0 })
-    .to(diploma, { autoAlpha: 1, position: "relative", duration: 0.5 }, "<");
-};
-
-const createAnimationReverse = (unit) => {
-  const button = unit.querySelectorAll("button");
-  const img = unit.querySelectorAll(".unit__img-wrap");
-  const diploma = unit.querySelector(".diploma");
-  const timeline = gsap.timeline();
-
-  timeline
-    .to(diploma, { autoAlpha: 0, position: "absolute", duration: 0 })
-    .to(img, { width: imgWidth, ease: "none", duration: 0.3 })
-    .to(
-      button,
-      {
-        padding: !tablet ? 24 : 0,
-        backgroundColor: !tablet ? "#ffffff" : "transparent",
-        duration: 0.3,
-      },
-      "<"
-    );
-};
-
 const createAccordion = () => {
   const acc = new Accordion(".team__list", {
     beforeOpen: (element) => {
-      createAnimation(element);
+      // createAnimation(element);
     },
     beforeClose: (element) => {
-      createAnimationReverse(element);
+      // createAnimationReverse(element);
     },
   });
 };

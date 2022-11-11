@@ -3618,6 +3618,9 @@ iframe.wait-autoplay {
   cursor: pointer;
   -ms-flex-negative: 0;
       flex-shrink: 0;
+  -webkit-transition: 0.4s;
+  -o-transition: 0.4s;
+  transition: 0.4s;
 }
 
 .unit:hover .plus__icon,
@@ -3650,6 +3653,12 @@ iframe.wait-autoplay {
   overflow: hidden;
   -ms-flex-negative: 0;
       flex-shrink: 0;
+  -webkit-transition: 0.6s;
+  -o-transition: 0.6s;
+  transition: 0.6s;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
 }
 
 .unit__img-inner {
@@ -3658,17 +3667,18 @@ iframe.wait-autoplay {
   position: relative;
   border-radius: 8px;
   overflow: hidden;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
 }
 
 .unit__img {
-  position: absolute;
   display: block;
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  -o-object-position: center;
-     object-position: center;
+  -o-object-position: center top;
+     object-position: center top;
   top: 0;
   left: 0;
 }
@@ -3936,6 +3946,7 @@ iframe.wait-autoplay {
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
+  opacity: 0;
 }
 
 .unit-mobile__practice {
@@ -3981,6 +3992,9 @@ iframe.wait-autoplay {
 
 [aria-expanded="true"] {
   width: calc(74% - 8px);
+  padding: 0;
+  border-radius: 8px;
+  background-color: transparent;
 }
 
 [aria-expanded="true"] .plus--tb span {
@@ -3993,11 +4007,11 @@ iframe.wait-autoplay {
       -ms-flex-direction: column;
           flex-direction: column;
   margin-right: 0;
-  width: calc(62% - 8px);
-  margin-left: 0;
-  -webkit-box-flex: 0;
-      -ms-flex-positive: 0;
-          flex-grow: 0;
+  margin-left: 8px;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  max-width: 552px;
 }
 
 [aria-expanded="true"] .unit__plus {
@@ -4007,6 +4021,10 @@ iframe.wait-autoplay {
 [aria-expanded="true"] .unit__name {
   max-width: none;
   margin-bottom: 8px;
+}
+
+[aria-expanded="true"] .unit__img-wrap {
+  width: 39%;
 }
 
 [aria-expanded="true"] .unit__inner {
@@ -4025,6 +4043,11 @@ iframe.wait-autoplay {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+[aria-expanded="true"] .unit-box {
+  -webkit-animation: hide 0.8s;
+          animation: hide 0.8s;
 }
 
 [aria-expanded="true"] .unit-box__left {
@@ -4048,6 +4071,14 @@ iframe.wait-autoplay {
   margin-left: 0;
   padding: 24px;
   padding-left: 21px;
+}
+
+[aria-expanded="true"] + .diploma {
+  visibility: visible;
+  opacity: 1;
+  position: relative;
+  -webkit-animation: hide 0.8s;
+          animation: hide 0.8s;
 }
 
 .swiper-pagination-bullet {
@@ -4075,6 +4106,34 @@ iframe.wait-autoplay {
 
 .diploma__bullet--active {
   background-color: #ef7d00;
+}
+
+@-webkit-keyframes hide {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes hide {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
 
 .basicLightbox {
@@ -6191,7 +6250,7 @@ iframe.wait-autoplay {
   .diploma {
     width: 100%;
     border: 1px solid #e6e6e6;
-    margin-top: -1px;
+    margin-top: -2px;
     padding: 16px;
   }
 
@@ -6229,12 +6288,14 @@ iframe.wait-autoplay {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    margin-left: -2px;
   }
 
   [aria-expanded="true"] .unit-mobile {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    opacity: 1;
   }
 
   [aria-expanded="true"] .unit__box {
@@ -6242,8 +6303,17 @@ iframe.wait-autoplay {
     margin-left: 16px;
   }
 
+  [aria-expanded="true"] .unit__img-wrap {
+    width: 109px;
+  }
+
   [aria-expanded="true"] .unit__practice--dt {
     display: none;
+  }
+
+  [aria-expanded="true"] .unit-box {
+    -webkit-animation: none;
+            animation: none;
   }
 
   [aria-expanded="true"] .unit-box__left {
@@ -6251,6 +6321,11 @@ iframe.wait-autoplay {
     border-radius: 0%;
     margin-bottom: 0;
     padding: 0;
+  }
+
+  [aria-expanded="true"] + .diploma {
+    -webkit-animation: none;
+            animation: none;
   }
 
   .consultation__inner {
@@ -6550,6 +6625,10 @@ iframe.wait-autoplay {
 
   .unit__career {
     font-size: 0.75rem;
+  }
+
+  [aria-expanded="true"] .unit__img-wrap {
+    width: 80px;
   }
 
   .consultation__inner {

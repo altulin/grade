@@ -1,6 +1,3 @@
-// import renderHover from "./hover";
-// import getProcessSlider from "./processSlider";
-
 let resizeTimeout;
 
 const actualResizeHandler = () => {
