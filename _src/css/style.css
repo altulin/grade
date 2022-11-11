@@ -3481,10 +3481,11 @@ iframe.wait-autoplay {
 .process__bullet {
   height: 4px;
   border-radius: 50px;
-  width: calc((100% / 3) - 16px);
+  width: calc((100% - 16px) / 3);
   -webkit-transition: 0.3s;
   -o-transition: 0.3s;
   transition: 0.3s;
+  background-color: #373e4f;
 }
 
 .process__bullet.swiper-pagination-bullet-active {
@@ -6269,13 +6270,13 @@ iframe.wait-autoplay {
 
   .diploma__titile {
     position: absolute;
-    top: 0;
+    top: 3px;
     z-index: 2;
   }
 
   .diploma__swiper {
     padding-bottom: 0;
-    padding-top: 40px !important;
+    padding-top: 32px !important;
   }
 
   .unit[aria-expanded="true"] {
@@ -6510,7 +6511,6 @@ iframe.wait-autoplay {
 
   .tabs__item {
     max-width: none;
-    width: 50%;
   }
 
   .tabs-link {
@@ -6522,26 +6522,30 @@ iframe.wait-autoplay {
   }
 
   .tabs-link[aria-selected="true"] {
-    padding-top: 7px;
-    padding-bottom: 7px;
+    padding-top: 11px;
+    padding-bottom: 11px;
     padding-left: 8px;
   }
 
+  .tabs-link--expertise[aria-selected="true"] {
+    padding-left: 14px;
+  }
+
   .tabs-link {
-    padding-top: 9px;
-    padding-bottom: 9px;
+    padding-top: 13px;
+    padding-bottom: 13px;
   }
 
   .tabs-link__icon {
-    width: 20px;
-    height: 20px;
+    width: 32px;
+    height: 32px;
     margin-right: 5px;
     -ms-flex-negative: 0;
         flex-shrink: 0;
   }
 
   .tabs-link__text {
-    font-size: 15px;
+    font-size: 16px;
   }
 
   .tabs-link__num {
@@ -6603,8 +6607,12 @@ iframe.wait-autoplay {
   }
 
   .quick__link {
-    padding-top: 1.25rem;
-    padding-bottom: 1.25rem;
+    padding-top: 27px;
+    padding-bottom: 27px;
+    font-size: 16px;
+    color: #ffffff;
+    border-radius: 8px;
+    background-color: #ff794c;
   }
 
   .process-item {
@@ -6825,10 +6833,8 @@ iframe.wait-autoplay {
 
 @media screen and (max-width: 400px) {
   .diploma__titile {
-    position: relative;
-    margin-bottom: 16px;
-    margin-left: auto;
-    margin-right: auto;
+    font-size: 12px;
+    margin-bottom: 0;
   }
 }
 
@@ -6863,3 +6869,4 @@ iframe.wait-autoplay {
     background: #000;
   }
 }
+/*# sourceMappingURL=style.css.map */

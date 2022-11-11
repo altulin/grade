@@ -104,8 +104,12 @@
     }
 
     @include mw($ph) {
-      @include padding-top(20px);
-      @include padding-bottom(20px);
+      padding-top: 27px;
+      padding-bottom: 27px;
+      font-size: 16px;
+      color: $white;
+      border-radius: 8px;
+      background-color: #ff794c;
       // padding-top: 24px;
       // padding-bottom: 24px;
       // font-size: 16px;

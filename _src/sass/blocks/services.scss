@@ -79,7 +79,6 @@
 
     @include mw($ph) {
       max-width: none;
-      width: 50%;
     }
   }
 
@@ -147,12 +146,6 @@
     }
   }
 
-  @include mw($dt) {
-    &--expertise[aria-selected="true"] {
-      padding-left: 14px;
-    }
-  }
-
   &[aria-selected="false"] {
     color: #20262f;
   }
@@ -167,15 +160,25 @@
     color: #ff794c;
 
     @include mw($ph) {
-      padding-top: 7px;
-      padding-bottom: 7px;
+      padding-top: 11px;
+      padding-bottom: 11px;
       padding-left: 8px;
     }
   }
 
+  &--expertise[aria-selected="true"] {
+    @include mw($dt) {
+      padding-left: 14px;
+    }
+
+    @include mw($ph) {
+      padding-left: 14px;
+    }
+  }
+
   @include mw($ph) {
-    padding-top: 9px;
-    padding-bottom: 9px;
+    padding-top: 13px;
+    padding-bottom: 13px;
   }
 
   &__icon {
@@ -186,8 +189,8 @@
     margin-right: 16px;
 
     @include mw($ph) {
-      width: 20px;
-      height: 20px;
+      width: 32px;
+      height: 32px;
       margin-right: 5px;
       flex-shrink: 0;
     }
@@ -206,7 +209,7 @@
     letter-spacing: -0.04em;
 
     @include mw($ph) {
-      font-size: 15px;
+      font-size: 16px;
     }
   }
 

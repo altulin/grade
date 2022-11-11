@@ -34,8 +34,9 @@
   &__bullet {
     height: 4px;
     border-radius: 50px;
-    width: calc((100% / 3) - 16px);
+    width: calc((100% - 16px) / 3);
     transition: 0.3s;
+    background-color: #373e4f;
 
     &.swiper-pagination-bullet-active {
       background-color: #ff794c;
