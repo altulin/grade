@@ -16872,6 +16872,28 @@ var politikListener = function politikListener() {
 };
 
 /* harmony default export */ var moduleDoc = (politikListener);
+// CONCATENATED MODULE: ./_src/js/modules/reviewsSlider.js
+/* eslint-disable no-unused-vars */
+
+
+
+var reviewsSlider_getReviewsSlider = function getReviewsSlider() {
+  if (winWidth < 601) {
+    core_class.use([pagination]);
+    var swiper = new core_class(".reviews__swiper", {
+      cssMode: true,
+      spaceBetween: 0,
+      pagination: {
+        el: ".reviews__pagination",
+        type: "bullets",
+        bulletClass: "reviews__bullet",
+        bulletActiveClass: "reviews__bullet--active"
+      }
+    });
+  }
+};
+
+/* harmony default export */ var reviewsSlider = (reviewsSlider_getReviewsSlider);
 // CONCATENATED MODULE: ./_src/js/main.js
 /* eslint-disable object-shorthand */
 
@@ -16882,6 +16904,7 @@ var politikListener = function politikListener() {
 /* eslint-disable new-cap */
 
 /* eslint-disable no-unused-vars */
+
 
 
 
@@ -16976,6 +16999,7 @@ window.addEventListener("DOMContentLoaded", function () {
   map();
   modules_actualYear();
   moduleDoc();
+  reviewsSlider();
 });
 
 /***/ })

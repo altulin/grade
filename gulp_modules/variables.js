@@ -146,6 +146,7 @@ const paths = {
     rasterImg: [
       `${srcFolder}/_img/*.{png,jpg}`,
       `${srcFolder}/_img/slide/*.{png,jpg}`,
+      `${srcFolder}/_img/reviews/*.{png,jpg}`,
     ],
     vectorImg: `${srcFolder}/_img/svg/*.svg`,
     webpImg: `${srcFolder}/_img/webp/*.{png,jpg}`,

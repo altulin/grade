@@ -7,4 +7,14 @@ section.reviews(id=`${nav[3].link}`)
 			|
 			| наших клиентов с&nbsp;сервиса 2гис
 
-		.sw-app.reviews__app(data-app="d587bd33ffd38f2f9eeb7cd35790a017")
+		//- .sw-app.reviews__app(data-app="d587bd33ffd38f2f9eeb7cd35790a017")
+		.reviews__swiper.swiper.reviews-slider
+			ul.reviews-slider__list.swiper-wrapper.swiper-container
+				while n < 16
+					li.reviews-slider__item.swiper-slide.reviews-slide
+						.reviews-slide__inner
+							img.reviews-slider__img(src=`./img/review-${n+1}.jpg`, alt="отзыв")
+					-n++
+				-n=0
+
+			.reviews__pagination
