@@ -224,6 +224,28 @@
     color: #20262f;
     letter-spacing: -0.04em;
     margin-top: 4px;
+    display: flex;
+    align-items: center;
+  }
+
+  &__city {
+    font-size: 18px;
+    color: #20262f;
+    letter-spacing: -0.04em;
+    margin-top: 4px;
+    display: flex;
+    align-items: center;
+
+    &::after {
+      content: "";
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 6px 4px 0 4px;
+      border-color: #20262f transparent transparent transparent;
+      margin-left: 2px;
+      margin-top: 2px;
+    }
   }
 
   &__text--geo {
@@ -244,6 +266,7 @@
 .geo {
   position: relative;
   cursor: pointer;
+  outline: none;
 
   @include mw($tb) {
     position: relative;
@@ -473,4 +496,50 @@
 
 .custom-select-option.is-selected::before {
   content: none;
+}
+
+.my-city {
+  position: relative;
+
+  &__wrap {
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.2s;
+    position: absolute;
+    left: -15px;
+    top: 100%;
+    padding-top: 15px;
+
+    @include mw($ph) {
+      padding-top: 5px;
+    }
+  }
+
+  &__list {
+    border: 1px solid #e3e4e5;
+    overflow: hidden;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #fff;
+    border-radius: 8px;
+    top: 100%;
+  }
+
+  &__sub-link {
+    font-size: 18px;
+    color: #20262f;
+    letter-spacing: -0.04em;
+    padding: 10px 15px;
+    display: block;
+    transition: 0.3s;
+
+    @include hocus() {
+      opacity: 0.6;
+    }
+  }
+}
+
+.location-visible {
+  opacity: 1;
+  visibility: inherit;
 }

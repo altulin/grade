@@ -12,18 +12,17 @@ import GLightbox from "glightbox";
 import makeListenerConsult from "./modules/moduleConsultation";
 import createlawSlider from "./modules/lawSlider";
 import createAccordionFaq from "./modules/faqAccordion";
-import makeSelectGeo from "./modules/geo";
-import makeSelectCity from "./modules/city";
-import getMap, { winWidth } from "./modules/map";
+import getMap from "./modules/map";
 import makeAncor from "./modules/anchor";
 import getProcessSlider from "./modules/processSlider";
 import actualYear from "./modules/actualYear";
 import politikListener from "./modules/moduleDoc";
-import officesList from "./modules/offices";
-import changeCity from "./modules/changeCity";
 import getReviewsSlider from "./modules/reviewsSlider";
+import changeLocation from "./modules/location";
 
 const nav = ".nav";
+const headerSelect = document.querySelector(".geo-js");
+const contactSelect = document.querySelector(".hookup-js");
 
 const createMobileMenu = () => {
   document.addEventListener("DOMContentLoaded", function () {
@@ -82,11 +81,11 @@ const createLightbox = () => {
 createMobileMenu();
 
 window.addEventListener("DOMContentLoaded", function () {
-  changeCity(officesList[0].in);
+  changeLocation(headerSelect);
+  changeLocation(contactSelect);
   makeAncor();
   createStickyHeader();
   createTabs();
-  makeSelectGeo();
   getProcessSlider();
   createAccordion();
   createSliders();
@@ -94,7 +93,6 @@ window.addEventListener("DOMContentLoaded", function () {
   makeListenerConsult();
   createlawSlider();
   createAccordionFaq();
-  makeSelectCity();
   getMap();
   actualYear();
   politikListener();

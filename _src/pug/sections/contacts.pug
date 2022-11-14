@@ -5,20 +5,27 @@ section.contacts(id=nav[4].link)
 		.contacts__content
 			.contacts__left.hookup
 				ul.hookup__list
-					li.hookup__item.city
-						label.city__label(for="#city") Выбрать город
-						select#city.city__select(name="city")
+					li.hookup__item.hookup__item--title.hookup-js.my-city
+						h3.hookup__title.location__title-js= current
+						.hookup__wrap.location-js
+							ul.my-city__list.my-city__list--contacts
+								each item in geo
+									if item.name !== current
+										li.my-city__item
+											a.my-city__sub-link.location__link-js.hookup__link(href=`/${item.id}.html#contacts`)= item.name
+
 
 
 				ul.hookup__data.data
 					li.data__item.data__item--addr
-						//- p.data__addr
+						each item in location.addr
+							p.data__addr= item
 
 					li.data__item
-						a.data__link.data__link--mail(href=`#`)
+						a.data__link.data__link--mail(href=`mailto:${location.mail}`)= location.mail
 
 					li.data__item
-						a.data__link.data__link--tel(href=`#`)
+						a.data__link.data__link--tel(href=`tel:${location.link}`)= location.tel
 
 			.contacts__right.map
 				.map__inner#map

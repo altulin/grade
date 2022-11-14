@@ -1,6 +1,6 @@
 -const geo1 = {id:'krasnoyarsk',link:'+73912347778',tel:'8 3912 347778',mail:'krs.ocenka@mail.ru',addr:['г. Красноярск, переулок Афонтовский, д.7, офис 215','г. Красноярск, ул. Линейная, д. 89, офис Ц.2-05'],name:'Красноярск'};
 
--const geo2 = {id:'irkutsk',link:'+73952435001',tel:'8 3952 435001',mail:'irk.ocenka@mail.ru',addr:['г.Иркутск, ул. Ширямова, д.22, офис 302'],name:'Иркутск'};
+-const geo2 = {id:'irkutsk',link:'+73952435001',tel:'8 3952 435001',mail:'irk.ocenka@mail.ru',addr:['г. Иркутск, ул. Ширямова, д.22, офис 302'],name:'Иркутск'};
 
 -const geo3 = {id:'bratsk',link:'+79025432294',tel:'8 9025 432294',mail:'brt.ocenka@mail.ru',addr:['г. Братск, ул. Южная, д.33а, офис 08'],name:'Братск'};
 
@@ -15,7 +15,7 @@
 header.header#header
 	.header__inner.container.container--header
 
-		a.header__logo.logo(href="/index.html")
+		a.header__logo.logo(href=`/${location.id}.html`)
 			+img-retina(`logo`, `png`, `логотип`, `logo__img`, `128`, `52`)
 
 		nav.header__nav.nav
@@ -29,7 +29,8 @@ header.header#header
 				span.orange от 1 дня в
 					|
 					|
-					span.nav__city Иркутске
+					span.nav__city= current
+						| е
 
 			ul.nav__list
 
@@ -39,15 +40,25 @@ header.header#header
 
 
 		.header__icon-box.icon-box
-			.icon-box__link.geo(role="button")
+			.icon-box__link.geo.geo-js(tabindex="0")
 				span.icon-box__icon-wrap.icon-box__icon-wrap--geo
 					+svg('geo', 13, 13, 'geo')
-				.geo__block
+				.geo__block.my-city
 					.icon-box__inner
 						span.icon-box__title Ваш город:
-					.geo__list-wrap
-						label.geo__label(for="#geo") Выбрать город
-						select#geo.geo__select(name="geo")
+						span.icon-box__city= current
+
+					//- .geo__list-wrap.choice-js.my-city
+
+					.my-city__wrap.location-js
+						ul.my-city__list
+							each item in geo
+								if item.name !== current
+									li.my-city__item
+										a.my-city__sub-link.location__link-js(href=`/${item.id}.html`)= item.name
+
+						//- label.geo__label(for="#geo") Выбрать город
+						//- select#geo.geo__select(name="geo")
 
 		.header__icon-box.icon-box
 			//- each n in geo

@@ -67,6 +67,7 @@
     "webpack-stream": "^6.1.2"
   },
   "dependencies": {
+    "2gis-maps": "^3.7.2",
     "accordion-js": "^3.3.2",
     "basiclightbox": "^5.0.4",
     "body-scroll-lock": "^4.0.0-beta.0",
