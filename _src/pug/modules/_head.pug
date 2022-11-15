@@ -274,4 +274,16 @@ head
 			link(rel="manifest" href!=link.manifest)
 		if link.maskIcon.href !== null
 			link(rel="mask-icon" href!=link.maskIcon.href color=link.maskIcon.color)
+
+		<!-- Yandex.Metrika counter -->
+		script
+			include ./metrika.js
+
+		<noscript>
+			<div>
+				<img src="https://mc.yandex.ru/watch/91181739" style="position:absolute; left:-9999px;" alt="" />
+			</div>
+		</noscript>
+		<!-- /Yandex.Metrika counter -->
+
 	block styles

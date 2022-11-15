@@ -3129,7 +3129,7 @@ iframe.wait-autoplay {
   padding-top: calc(2.25rem + 12vw);
   background-color: #f9f9f9;
   padding-bottom: 100px;
-  padding-bottom: calc(1.75rem + 6vw);
+  padding-bottom: calc(2.25rem + 12vw);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -4892,11 +4892,44 @@ iframe.wait-autoplay {
   letter-spacing: -0.02em;
   color: #ff794c;
   padding: 21px 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.hookup__title::after {
+  content: "";
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 6px 4px 0 4px;
+  border-color: #20262f transparent transparent transparent;
+  margin-left: 2px;
+  -webkit-transform: translateY(2px);
+      -ms-transform: translateY(2px);
+          transform: translateY(2px);
+  -webkit-transition: -webkit-transform 0.2s;
+  transition: -webkit-transform 0.2s;
+  -o-transition: transform 0.2s;
+  transition: transform 0.2s;
+  transition: transform 0.2s, -webkit-transform 0.2s;
 }
 
 .hookup__title.location__title--active {
   border-radius: 24px 24px 0 0;
   border-bottom-color: transparent;
+}
+
+.hookup__title.location__title--active::after {
+  -webkit-transform: translateY(2px) rotate(180deg);
+      -ms-transform: translateY(2px) rotate(180deg);
+          transform: translateY(2px) rotate(180deg);
 }
 
 .hookup__item--title {
@@ -5669,7 +5702,7 @@ iframe.wait-autoplay {
   }
 
   .services {
-    padding-bottom: 6.25rem;
+    padding-bottom: 11.25rem;
   }
 
   .services__title {

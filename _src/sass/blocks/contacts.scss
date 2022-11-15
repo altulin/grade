@@ -77,6 +77,25 @@
     letter-spacing: -0.02em;
     color: #ff794c;
     padding: 21px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &::after {
+      content: "";
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 6px 4px 0 4px;
+      border-color: #20262f transparent transparent transparent;
+      margin-left: 2px;
+      transform: translateY(2px);
+      transition: transform 0.2s;
+
+      // @include mw($tb) {
+      //   content: none;
+      // }
+    }
 
     @include mw($ph) {
       font-size: 18px;
@@ -91,6 +110,10 @@
 
       @include mw($ph) {
         border-radius: 8px 8px 0 0;
+      }
+
+      &::after {
+        transform: translateY(2px) rotate(180deg);
       }
     }
   }

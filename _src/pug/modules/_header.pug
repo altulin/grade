@@ -62,12 +62,12 @@ header.header#header
 
 		.header__icon-box.icon-box
 			//- each n in geo
-			a.icon-box__link.icon-box__link--consultation(href=`tel:${geo[0].link}`)
+			a.icon-box__link.icon-box__link--consultation(href=`tel:${location.link}`)
 				span.icon-box__icon-wrap
 					+svg('tel', 13, 13, 'tel')
 				.icon-box__inner
 					span.icon-box__title Консультация
-					span.icon-box__text= geo[0].tel
+					span.icon-box__text= location.tel
 
 
 		a.header__burger.header-btn(href="#")
