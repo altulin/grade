@@ -1,6 +1,6 @@
 
 mixin svg(name, width, height, selector)
-  - const sprite = "/img/sprite.svg"
+  - const sprite = "./img/sprite.svg"
 
   svg(viewBox=`0 0 ${width} ${height}` width = width height = height class=(`${selector}__icon`))
     use(xlink:href= `${sprite}#${name}`)
@@ -8,8 +8,8 @@ mixin svg(name, width, height, selector)
 //- img webp +img(``, ``, ``, ``, ``, ``)
 //- mixin img(name, type, alt, className, width, height)
 //- picture
-//- source(srcset=`/img/webp/${name}.webp` type=`image/webp`)
-//- img(class=`${className}` src=`/img/${name}.${type}` alt=alt width=width height=height loading="lazy")
+//- source(srcset=`./img/webp/${name}.webp` type=`image/webp`)
+//- img(class=`${className}` src=`./img/${name}.${type}` alt=alt width=width height=height loading="lazy")
 
 
 
@@ -20,10 +20,10 @@ mixin img-retina(name, type, alt, className, width, height, ...args)
   - let sourceWebp = {};
   - let img = {};
 
-  - sourceWebp[srcsetAttr] = `/img/webp/${name}.webp 1x, /img/webp/${name}@2x.webp 2x`;
+  - sourceWebp[srcsetAttr] = `./img/webp/${name}.webp 1x, ./img/webp/${name}@2x.webp 2x`;
   - img.class = attributes.lazy ? `lazyload ${className}` : `${className}`;
-  - img[srcAttr] = `/img/${name}.${type}`;
-  - img[srcsetAttr] = `/img/${name}.${type} 1x, /img/${name}@2x.${type} 2x`;
+  - img[srcAttr] = `./img/${name}.${type}`;
+  - img[srcsetAttr] = `./img/${name}.${type} 1x, ./img/${name}@2x.${type} 2x`;
   - img.alt = alt;
   - img.width = width;
   - img.height = height;
@@ -35,8 +35,8 @@ mixin img-retina(name, type, alt, className, width, height, ...args)
 
 
       each item in args
-        - sourceArgsWebp[srcsetAttr] = `/img/webp/${name}-${item}.webp 1x, /img/webp/${name}-${item}@2x.webp 2x`;
-        - sourceArgs[srcsetAttr] = `/img/${name}-${item}.${type} 1x, /img/${name}-${item}@2x.${type} 2x`;
+        - sourceArgsWebp[srcsetAttr] = `./img/webp/${name}-${item}.webp 1x, ./img/webp/${name}-${item}@2x.webp 2x`;
+        - sourceArgs[srcsetAttr] = `./img/${name}-${item}.${type} 1x, ./img/${name}-${item}@2x.${type} 2x`;
         - let media = `(max-width: ${item}px)`
 
         source(media = `${media}` type="image/webp")&attributes(sourceArgsWebp)
@@ -51,15 +51,15 @@ mixin img-retina(name, type, alt, className, width, height, ...args)
 //-     picture
 
 //-       each item in args
-//-         source(media=`(max-width: ${item}px)` data-srcset=`/img/${name}-${item}.${type} 1x, /img/${name}-${item}@2x.${type} 2x`)
+//-         source(media=`(max-width: ${item}px)` data-srcset=`./img/${name}-${item}.${type} 1x, ./img/${name}-${item}@2x.${type} 2x`)
 
-//-       img.lazyload(class=`${className}` data-src=`/img/${name}.${type}` data-srcset=`/img/${name}.${type} 1x, /img/${name}@2x.${type} 2x` alt=alt width=width height=height loading="lazy")
+//-       img.lazyload(class=`${className}` data-src=`./img/${name}.${type}` data-srcset=`./img/${name}.${type} 1x, ./img/${name}@2x.${type} 2x` alt=alt width=width height=height loading="lazy")
 
 //-   else
 
-//-     img.lazyload(class=`${className}` data-src=`/img/${name}.${type}` data-srcset=`/img/${name}.${type} 1x, /img/${name}@2x.${type} 2x` alt=alt width=width height=height loading="lazy")
+//-     img.lazyload(class=`${className}` data-src=`./img/${name}.${type}` data-srcset=`./img/${name}.${type} 1x, ./img/${name}@2x.${type} 2x` alt=alt width=width height=height loading="lazy")
 
 
 //- +img-svg(``, ``, ``, ``, ``, ``)
 mixin img-svg(name, className, alt, width, height)
-  img(class=`${className}` src=`/img/svg/${name}.svg` alt=alt width=width height=height loading="lazy")
+  img(class=`${className}` src=`./img/svg/${name}.svg` alt=alt width=width height=height loading="lazy")

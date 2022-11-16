@@ -4,7 +4,7 @@ block vars
 	-
 		var title = typeof title !== 'undefined' ? title : 'Экпертизы и оценка'
 		var description = typeof description !== 'undefined' ? description : 'Независимые экспертизы и оценка от 1 дня в Иркутске'
-		var image = typeof image !== 'undefined' ? image : null
+		var image = typeof image !== 'undefined' ? image : `${baseDir}img/promo-bg-1200.jpg`
 	-
 		var html = {
 			attrs: {
@@ -96,7 +96,7 @@ block vars
 			appleTouchIconPrecomposed180x180: null,
 			appleTouchIconPrecomposed1024x1024: null,
 			icon: './fav/favicon.ico',
-			icon16x16: '/fav/favicon-16x16.png',
+			icon16x16: './fav/favicon-16x16.png',
 			icon32x32: './fav/favicon-32x32.png',
 			icon96x96: null,
 			icon128x128: null,
