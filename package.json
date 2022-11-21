@@ -62,9 +62,11 @@
     "stylelint-declaration-block-no-ignored-properties": "^2.4.0",
     "stylelint-order": "^4.1.0",
     "stylelint-scss": "^3.20.1",
+    "terser-webpack-plugin": "^5.3.6",
     "uglifyjs-webpack-plugin": "^2.2.0",
     "video.js": "^7.17.0",
-    "webpack-stream": "^6.1.2"
+    "webpack": "^5.75.0",
+    "webpack-stream": "^7.0.0"
   },
   "dependencies": {
     "2gis-maps": "^3.7.2",

@@ -28,4 +28,4 @@ section.contacts(id=nav[4].link)
 						a.data__link.data__link--tel(href=`tel:${location.link}`)= location.tel
 
 			.contacts__right.map
-				.map__inner#map
+				.map__inner#map(data-city=`${location.id}`)

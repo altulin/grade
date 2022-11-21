@@ -1,18 +1,19 @@
-import success from "./moduleSuccess";
+import success from "./moduleSuccess.js";
 // eslint-disable-next-line import/no-cycle
-import { htmlInstance } from "./moduleConsultation";
-import err from "./moduleErr";
+import { htmlInstance } from "./moduleConsultation.js";
+import err from "./moduleErr.js";
 
 export const form = document.querySelector(".consultation-form__inner");
 export const preloader = document.querySelector(".preloader");
-// test url
-const url = "https://reqbin.com/echo/post/json";
+
+const url = "/ajax.php";
 
 const onSubmit = (event) => {
   event.preventDefault();
 
   const name = document.getElementById("consultation-name").value;
   const tel = document.getElementById("consultation-tel").value;
+  const city = document.getElementById("consultation-city").value;
 
   const status = function (response) {
     if (response.status !== 200) {
@@ -35,6 +36,7 @@ const onSubmit = (event) => {
     body: JSON.stringify({
       name,
       tel,
+      city,
     }),
   })
     .then(status)

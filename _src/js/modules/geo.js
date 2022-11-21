@@ -1,8 +1,8 @@
 import customSelect from "custom-select";
 import officesList from "./offices";
 // eslint-disable-next-line import/no-cycle
-import { changeValueCity } from "./city";
-import { myMap, placemarkCollections } from "./map";
+import { changeValueCity } from "./city.js";
+import { myMap, placemarkCollections } from "./map.js";
 import changeCity from "./changeCity";
 
 const linkTel = document.querySelector(".icon-box__link--consultation");

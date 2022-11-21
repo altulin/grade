@@ -1,4 +1,5 @@
-import UglifyJsPlugin from "uglifyjs-webpack-plugin";
+// import UglifyJsPlugin from "uglifyjs-webpack-plugin";
+import TerserPlugin from "terser-webpack-plugin";
 
 const getConfig = (mode) => {
   return {
@@ -6,14 +7,8 @@ const getConfig = (mode) => {
     optimization: {
       minimize: mode,
       minimizer: [
-        new UglifyJsPlugin({
-          // include: /\.min\.js$/,
-          uglifyOptions: {
-            output: {
-              comments: false,
-            },
-          },
-          parallel: true,
+        new TerserPlugin({
+          // exclude: "_src/js/modules/resize.js",
         }),
       ],
     },

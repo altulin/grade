@@ -1,9 +1,9 @@
 /* eslint-disable no-restricted-syntax */
 
 import * as basicLightbox from "basiclightbox";
-import getInputMask from "./inputMask";
+import getInputMask from "./inputMask.js";
 // eslint-disable-next-line import/no-cycle
-import onSubmit, { form } from "./formSend";
+import onSubmit, { form } from "./formSend.js";
 
 export const htmlInstance = basicLightbox.create(
   document.querySelector(".consultation")

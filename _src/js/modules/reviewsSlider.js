@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import Swiper, { Pagination } from "swiper";
-import { winWidth } from "./map";
+import { winWidth } from "./map.js";
 
 const getReviewsSlider = () => {
   if (winWidth < 601) {

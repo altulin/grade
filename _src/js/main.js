@@ -9,16 +9,16 @@ import Accordion from "accordion-js";
 import Swiper, { Pagination } from "swiper";
 import HcOffcanvasNav from "hc-offcanvas-nav";
 import GLightbox from "glightbox";
-import makeListenerConsult from "./modules/moduleConsultation";
-import createlawSlider from "./modules/lawSlider";
-import createAccordionFaq from "./modules/faqAccordion";
-import getMap from "./modules/map";
-import makeAncor from "./modules/anchor";
-import getProcessSlider from "./modules/processSlider";
-import actualYear from "./modules/actualYear";
-import politikListener from "./modules/moduleDoc";
-import getReviewsSlider from "./modules/reviewsSlider";
-import changeLocation from "./modules/location";
+import makeListenerConsult from "./modules/moduleConsultation.js";
+import createlawSlider from "./modules/lawSlider.js";
+import createAccordionFaq from "./modules/faqAccordion.js";
+import getMap from "./modules/map.js";
+import makeAncor from "./modules/anchor.js";
+import getProcessSlider from "./modules/processSlider.js";
+import actualYear from "./modules/actualYear.js";
+import politikListener from "./modules/moduleDoc.js";
+import getReviewsSlider from "./modules/reviewsSlider.js";
+import changeLocation from "./modules/location.js";
 
 const nav = ".nav";
 const headerSelect = document.querySelector(".geo-js");
@@ -60,12 +60,8 @@ const createSliders = () => {
 
 const createAccordion = () => {
   const acc = new Accordion(".team__list", {
-    beforeOpen: (element) => {
-      // createAnimation(element);
-    },
-    beforeClose: (element) => {
-      // createAnimationReverse(element);
-    },
+    beforeOpen: (element) => {},
+    beforeClose: (element) => {},
   });
 };
 
